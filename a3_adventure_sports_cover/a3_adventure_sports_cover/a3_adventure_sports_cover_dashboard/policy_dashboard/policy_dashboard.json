@@ -1,0 +1,37 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Endorsements",
+   "width": "Full"
+  },
+  {
+   "chart": "Policy Issued",
+   "width": "Half"
+  },
+  {
+   "chart": "New Operators",
+   "width": "Half"
+  },
+  {
+   "chart": "Policy Issuance Overview",
+   "width": "Half"
+  },
+  {
+   "chart": "Policy Issuance Overview 2",
+   "width": "Half"
+  }
+ ],
+ "creation": "2022-08-22 19:18:15.549159",
+ "dashboard_name": "Policy Dashboard",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-08-22 19:18:15.549159",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Policy Dashboard",
+ "owner": "Administrator"
+}

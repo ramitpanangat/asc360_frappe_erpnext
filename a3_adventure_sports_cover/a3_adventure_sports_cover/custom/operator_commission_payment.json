@@ -1,0 +1,32 @@
+{
+ "custom_fields": [],
+ "custom_perms": [],
+ "doctype": "Operator Commission Payment",
+ "property_setters": [
+  {
+   "_assign": null,
+   "_comments": null,
+   "_liked_by": null,
+   "_user_tags": null,
+   "creation": "2022-08-22 15:27:22.845558",
+   "default_value": null,
+   "doc_type": "Operator Commission Payment",
+   "docstatus": 0,
+   "doctype_or_field": "DocField",
+   "field_name": "reference_date",
+   "idx": 0,
+   "modified": "2022-08-22 15:27:22.845558",
+   "modified_by": "Administrator",
+   "name": "Operator Commission Payment-reference_date-depends_on",
+   "owner": "Administrator",
+   "parent": null,
+   "parentfield": null,
+   "parenttype": null,
+   "property": "depends_on",
+   "property_type": "Data",
+   "row_name": null,
+   "value": "eval:doc.mode_of_payment != \"Cash\""
+  }
+ ],
+ "sync_on_migrate": 1
+}

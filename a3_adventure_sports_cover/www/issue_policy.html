@@ -1,0 +1,133 @@
+{% extends "www/base_template.html" %}
+
+{% if user_type=="Agent Customer" %}
+    {% block activeIssuePolicyAG %}active{% endblock activeIssuePolicyAG %}
+{% else %}
+    {% block activeIssuePolicy %}active{% endblock activeIssuePolicy %}
+{% endif %}
+
+{% block title %}Issue Policy{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Issue Policy</h3>
+                        <div>
+                            <a href="/create_issue_policy" class="create-button">Create Single Policy</a>
+                            <a href="/create_bulk_policy" class="create-button">Create Bulk Policy</a>
+                        </div>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <!-- Filter Section -->
+                           <form action="/issue_policy" method="post">
+                               <!-- Filter by Policy Number -->
+                                {% if params.name==None or params.name=="" %}
+                                    <input type="text" name="name" list="name" autocomplete="off" placeholder="Policy Number">
+                                {% else %}
+                                    <input type="text" name="name" list="name" autocomplete="off" value="{{params.name}}">
+                                {% endif %}
+                                <datalist id="name">
+                                    {% for policy in all_policy_issue %}
+                                        <option value="{{policy.name}}">{{policy.name}}</option>
+                                    {% endfor %}
+                                </datalist>
+
+                                <!-- Filter by Customer -->
+                                {% if params.customer_name==None or params.customer_name=="" %}
+                                    <input type="text" name="customer_name" list="customer" autocomplete="off" placeholder="Customer">
+                                {% else %}
+                                    <input type="text" name="customer_name" list="customer" autocomplete="off" value="{{params.customer_name}}">
+                                {% endif %}
+                                <datalist id="customer">
+                                    {% for customer in customers %}
+                                        <option value="{{customer}}">{{customer}}</option>
+                                    {% endfor %}
+                                </datalist>
+
+                                <!-- Filter by Policy -->
+                                {% if params.policy==None or params.policy=="" %}
+                                    <input type="text" name="policy" list="policy" autocomplete="off" placeholder="Plan Name">
+                                {% else %}
+                                    <input type="text" name="policy" list="policy" autocomplete="off" value="{{params.policy}}">
+                                {% endif %}
+                                <datalist id="policy">
+                                    {% for policy in policies %}
+                                        <option value="{{policy}}">{{policy}}</option>
+                                    {% endfor %}
+                                </datalist>
+                                <input type="submit" value="Filter">
+                           </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Policy Number</th>
+                                        <th class="border-0">Customer</th>
+                                        <th class="border-0">DOB</th>
+                                        <th class="border-0">Plan Name</th>
+                                        <th class="border-0">Start Date</th>
+                                        <th class="border-0">Period Of Issuance</th>
+                                        <th class="border-0"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if policy_issue|length > 0 %}
+                                        {% for policy in policy_issue %}
+                                            <tr>
+                                                    <td><a href="/view_issue_policy/{{policy.name}}" class="item-view">{{policy.name}}</a></td>
+                                                    <td>{{policy.customer_name}}</td>
+                                                    <td>{% if policy.date_of_birth %}{{policy.date_of_birth.strftime('%d-%m-%Y')}}{% else %}N/A{% endif %}</td>
+                                                    <td>{{policy.policy}}</td>
+                                                    <td>{{policy.start_date.strftime('%d-%m-%Y')}}</td>
+                                                    <td>{{policy.period_of_issuance}}</td>
+                                                    <td><a href="/files/{{policy.name}}.pdf" class="view-pdf" target="_blank">View PDF</a></td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-btn">
+                    {% if prev_page != 0 %}
+                    <form action="/issue_policy">
+                        <input type="hidden" value="{{prev_page}}" name="page">
+                        <input type="submit" value="Previous">
+                    </form>
+                    {% endif %}
+                    {% if next_page>0 %}
+                    <form action="/issue_policy">
+                        <input type="hidden" value="{{next_page}}" name="page">
+                        <input type="submit" value="Next">
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

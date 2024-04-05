@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2022-10-26 19:53:22.093282",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"filters\":[[\"B2B Policy Issue\",\"policy_type\",\"=\",\"Single Policy\",false],[\"B2B Policy Issue\",\"hdfc_provider_id\",\"is\",\"not set\",false],[\"B2B Policy Issue\",\"icici_provider_id\",\"is\",\"not set\",false],[\"B2B Policy Issue\",\"other_provider_id\",\"is\",\"not set\",false],[\"B2B Policy Issue\",\"provider_policy_id\",\"is\",\"not set\",false]],\"fields\":[[\"name\",\"B2B Policy Issue\"],[\"docstatus\",\"B2B Policy Issue\"],[\"title\",\"B2B Policy Issue\"],[\"customer_name\",\"B2B Policy Issue\"],[\"date_of_birth\",\"B2B Policy Issue\"],[\"email_id\",\"B2B Policy Issue\"],[\"phone_number\",\"B2B Policy Issue\"],[\"nominee_name\",\"B2B Policy Issue\"],[\"nominee_relationship\",\"B2B Policy Issue\"],[\"pre_existing_disease\",\"B2B Policy Issue\"],[\"address_line_1\",\"B2B Policy Issue\"],[\"address_line_2\",\"B2B Policy Issue\"],[\"country\",\"B2B Policy Issue\"],[\"state\",\"B2B Policy Issue\"],[\"city\",\"B2B Policy Issue\"],[\"pin_code\",\"B2B Policy Issue\"],[\"policy\",\"B2B Policy Issue\"],[\"start_location\",\"B2B Policy Issue\"],[\"end_location\",\"B2B Policy Issue\"],[\"pnr_number\",\"B2B Policy Issue\"],[\"start_date\",\"B2B Policy Issue\"],[\"end_date\",\"B2B Policy Issue\"],[\"ref_1\",\"B2B Policy Issue\"],[\"ref_2\",\"B2B Policy Issue\"],[\"ref_3\",\"B2B Policy Issue\"],[\"flight_number\",\"B2B Policy Issue\"],[\"flight_departure_code\",\"B2B Policy Issue\"],[\"flight_arrival_code\",\"B2B Policy Issue\"],[\"departure_date\",\"B2B Policy Issue\"],[\"departure_time\",\"B2B Policy Issue\"],[\"arrival_date\",\"B2B Policy Issue\"],[\"arrival_time\",\"B2B Policy Issue\"],[\"period_of_issuance\",\"B2B Policy Issue\"],[\"employee_name\",\"B2B Policy Issue\"],[\"department_name\",\"B2B Policy Issue\"],[\"residential_status\",\"B2B Policy Issue\"],[\"country_of_issue_of_passport\",\"B2B Policy Issue\"],[\"common_carrier_or_public_carrier_opted\",\"B2B Policy Issue\"],[\"adventure_sports_activities_on_trip\",\"B2B Policy Issue\"],[\"detailed_itinerary_of_the_trip\",\"B2B Policy Issue\"],[\"debit_credit_card_no\",\"B2B Policy Issue\"],[\"guardian_name\",\"B2B Policy Issue\"],[\"assignee_name\",\"B2B Policy Issue\"],[\"nominee_dob\",\"B2B Policy Issue\"],[\"name_of_university\",\"B2B Policy Issue\"],[\"course_name\",\"B2B Policy Issue\"],[\"university_address\",\"B2B Policy Issue\"],[\"university_state\",\"B2B Policy Issue\"],[\"university_city\",\"B2B Policy Issue\"],[\"university_country\",\"B2B Policy Issue\"],[\"sponsor_name\",\"B2B Policy Issue\"],[\"sponsor_relationship_to_insured\",\"B2B Policy Issue\"],[\"sponsor_address\",\"B2B Policy Issue\"],[\"sponsor_date_of_birth\",\"B2B Policy Issue\"],[\"sponsor_contact_no\",\"B2B Policy Issue\"]],\"order_by\":\"`tabB2B Policy Issue`.`creation` desc\",\"add_totals_row\":0,\"page_length\":20,\"column_widths\":{\"name\":120,\"title\":120,\"customer_name\":120,\"date_of_birth\":120,\"email_id\":120,\"phone_number\":120,\"nominee_name\":120,\"nominee_relationship\":120,\"pre_existing_disease\":120,\"address_line_1\":120,\"address_line_2\":120,\"country\":120,\"state\":120,\"city\":120,\"pin_code\":120,\"policy\":120,\"start_location\":120,\"end_location\":120,\"pnr_number\":120,\"start_date\":120,\"end_date\":120,\"ref_1\":120,\"ref_2\":120,\"ref_3\":120,\"flight_number\":120,\"flight_departure_code\":120,\"flight_arrival_code\":120,\"departure_date\":120,\"departure_time\":120,\"arrival_date\":120,\"arrival_time\":120,\"period_of_issuance\":120,\"employee_name\":120,\"department_name\":120,\"residential_status\":120,\"country_of_issue_of_passport\":120,\"common_carrier_or_public_carrier_opted\":120,\"adventure_sports_activities_on_trip\":120,\"detailed_itinerary_of_the_trip\":120,\"debit_credit_card_no\":120,\"guardian_name\":120,\"assignee_name\":120,\"nominee_dob\":120,\"name_of_university\":120,\"course_name\":120,\"university_address\":120,\"university_state\":120,\"university_city\":120,\"university_country\":120,\"sponsor_name\":120,\"sponsor_relationship_to_insured\":120,\"sponsor_address\":120,\"sponsor_date_of_birth\":120,\"sponsor_contact_no\":120},\"group_by\":null}",
+ "modified": "2022-10-26 19:54:08.439389",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Provider Portal Upload Sheet",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "B2B Policy Issue",
+ "report_name": "Provider Portal Upload Sheet",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

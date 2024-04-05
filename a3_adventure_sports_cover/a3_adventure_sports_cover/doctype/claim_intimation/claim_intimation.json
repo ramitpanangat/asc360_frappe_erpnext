@@ -1,0 +1,134 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CI-{DD}-{MM}-{YYYY}-{#####}",
+ "creation": "2022-06-23 13:17:56.391663",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "date_of_intimation",
+  "intimation_by",
+  "column_break_2",
+  "incident_report",
+  "section_break_2",
+  "name_of_caller",
+  "relation_to_claimaint",
+  "column_break_9",
+  "caller_contact_no",
+  "contacted_by",
+  "claim_details_section",
+  "new_claim_number",
+  "column_break_14",
+  "supplier_claim_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_of_intimation",
+   "fieldtype": "Date",
+   "label": "Date of Intimation"
+  },
+  {
+   "fetch_from": "incident_report.caller_name",
+   "fetch_if_empty": 1,
+   "fieldname": "name_of_caller",
+   "fieldtype": "Data",
+   "label": "Name of Caller"
+  },
+  {
+   "fetch_from": "incident_report.caller_contact_number",
+   "fetch_if_empty": 1,
+   "fieldname": "caller_contact_no",
+   "fieldtype": "Data",
+   "label": "Caller Contact no."
+  },
+  {
+   "fetch_from": "incident_report.relation_to_claimaint",
+   "fetch_if_empty": 1,
+   "fieldname": "relation_to_claimaint",
+   "fieldtype": "Data",
+   "label": "Relation to Claimaint"
+  },
+  {
+   "fieldname": "intimation_by",
+   "fieldtype": "Select",
+   "label": "Intimation by",
+   "options": "\nClient\nThird Party\nGuide"
+  },
+  {
+   "fetch_from": "incident_report.contacted_through",
+   "fetch_if_empty": 1,
+   "fieldname": "contacted_by",
+   "fieldtype": "Select",
+   "label": "Contacted By",
+   "options": "Phone\nEmail\nWebsite\nApp"
+  },
+  {
+   "fieldname": "new_claim_number",
+   "fieldtype": "Data",
+   "label": "New Claim Number"
+  },
+  {
+   "fieldname": "supplier_claim_number",
+   "fieldtype": "Data",
+   "label": "Supplier Claim Number"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Caller Details"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incident_report",
+   "fieldtype": "Link",
+   "label": "Incident Report",
+   "options": "Incident Report"
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "claim_details_section",
+   "fieldtype": "Section Break",
+   "label": "Claim Details"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-23 13:53:57.705898",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Claim Intimation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

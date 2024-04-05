@@ -1,0 +1,87 @@
+{% extends "www/base_template.html" %}
+
+{% block activeCommissionPayment %}active{% endblock activeCommissionPayment %}
+
+{% block title %}Commission Payment Request{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Commission Payment Requests</h3>
+                        <a href="/operator_commission_payment" class="create-button">Add Request</a>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <!-- Filter Section -->
+                           <form action="/operator_commission_request_list" method="post">
+                               <!-- Filter by Policy Number -->
+                                {% if params.name==None or params.name=="" %}
+                                    <input type="text" name="name" list="name" autocomplete="off" placeholder="Request Number">
+                                {% else %}
+                                    <input type="text" name="name" list="name" autocomplete="off" value="{{params.name}}">
+                                {% endif %}
+                                <datalist id="name">
+                                    {% for commission_payment in commission_payment_list %}
+                                        <option value="{{commission_payment.name}}">{{commission_payment.name}}</option>
+                                    {% endfor %}
+                                </datalist>
+
+                                <input type="submit" value="Filter">
+                           </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Request Number</th>
+                                        <th class="border-0">Posting Date</th>
+                                        <th class="border-0">Period Start Date</th>
+                                        <th class="border-0">Period End Date</th>
+                                        <th class="border-0">Total Commission</th>
+                                        <th class="border-0">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if commission_payment_list|length > 0 %}
+                                        {% for commission_payment in commission_payment_list %}
+                                            <tr>
+                                                <td><a href="view_operator_commission/{{commission_payment.name}}" class="item-view">{{commission_payment.name}}</a></td>
+                                                <td>{{commission_payment.posting_date}}</td>
+                                                <td>{{commission_payment.period_start_date}}</td>
+                                                <td>{{commission_payment.period_end_date}}</td>
+                                                <td>{{commission_payment.total_commission}}</td>
+                                                <td>{{commission_payment.status}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

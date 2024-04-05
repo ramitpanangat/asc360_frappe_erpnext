@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 21:09:06.512950",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "body_part",
+  "condition"
+ ],
+ "fields": [
+  {
+   "fieldname": "body_part",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Body Part",
+   "options": "Head\nFace\nEyes\nEars\nNose\nShoulder\nLeg\nArm\nSpine/Back"
+  },
+  {
+   "fieldname": "condition",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Condition",
+   "options": "Bleeding\nSwollen"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-06-24 21:10:28.995588",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "HAMRC Treatment Injury Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

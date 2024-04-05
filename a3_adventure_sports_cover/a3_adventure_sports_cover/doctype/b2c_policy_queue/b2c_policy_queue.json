@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-11-23 13:06:17.685583",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "no_of_batches",
+  "section_break_2",
+  "policy_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "no_of_batches",
+   "fieldtype": "Int",
+   "label": "Highest Index"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "policy_list",
+   "fieldtype": "Table",
+   "label": "Policy List",
+   "options": "B2C Queue Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-11-24 15:16:20.995299",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2C Policy Queue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

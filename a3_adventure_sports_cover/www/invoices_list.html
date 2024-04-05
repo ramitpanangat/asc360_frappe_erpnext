@@ -1,0 +1,133 @@
+{% extends "www/base_template.html" %}
+
+{% if user_type=="Agent Type" %}
+    {% block activeInvoiceAG %}active{% endblock activeInvoiceAG %}
+{% else %}
+    {% block activeInvoice %}active{% endblock activeInvoice %}
+{% endif %}
+
+{% block title %}Invoices{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Invoices</h3>
+                    </div>
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+                           <form action="/invoices_list" method="post">
+
+                            <!-- Filter By Invoice Number -->
+                            {% if params.name==None or params.name=="" %}
+                                <input type="text" name="name" list="name" autocomplete="off" placeholder="Invoice Number">
+                            {% else %}
+                                <input type="text" name="name" list="name" autocomplete="off" value="{{params.name}}">
+                            {% endif %}
+                            <datalist id="name">
+                               {% for row in suggest_invoices %}  
+                                    {% if params.name==row.name %}
+                                        <option value="{{ row.name }}" selected>{{ row.name }}</option>
+                                    {% else %}
+                                        <option value="{{ row.name }}">{{ row.name }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </datalist>
+
+                            <!-- Filter for Due Date -->
+                            {% if params.due_date != "" %}
+                                <input type="date" name="due_date" id="due_date" value="{{params.due_date}}">
+                            {% else %}
+                                <input type="date" name="due_date" id="due_date">
+                            {% endif %}
+
+                            <!-- Filter By Customer Name -->
+                            {% if params.customer==None or params.customer=="" %}
+                                <input type="text" name="customer" list="customer" autocomplete="off" placeholder="Customer">
+                            {% else %}
+                                <input type="text" name="customer" list="customer" autocomplete="off" value="{{params.customer}}">
+                            {% endif %}
+                            <datalist id="customer" >
+                                {% for row in customer %}
+                                    <option value="{{ row }}">{{ row }}</option>
+                                {% endfor %}
+                            </datalist>
+                            
+                            <!-- Filter By Status -->
+                           {% if params.status==None or params.status=="" %}
+                                <input type="text" name="status" list="status" autocomplete="off" placeholder="Status">
+                            {% else %}
+                                <input type="text" name="status" list="status" autocomplete="off" value="{{params.status}}">
+                            {% endif %}
+                            <datalist id="status">
+                                {% for row in all_invoices %}  
+                                    <option value="{{ row.status }}">{{ row.status }}</option>
+                                {% endfor %}
+                            </datalist>
+                            <input type="submit" value="Filter">
+                           </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Invoice Number</th>
+                                        <th class="border-0">Customer</th>
+                                        <th class="border-0">Status</th>
+                                        <th class="border-0">Grand Total</th>
+                                        <th class="border-0">Payment Due Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% if invoices|length > 0 %}
+                                    {% for invoice in invoices %}
+                                            <tr>
+                                                    <td><a href="/view_invoice/{{invoice.name}}" class="item-view">{{invoice.name}}</a></td>
+                                                    <td>{{invoice.customer}}</td>
+                                                    <td>{{invoice.status}}</td>
+                                                    <td>{{invoice.grand_total}}</td>
+                                                    <td>{{invoice.due_date.strftime("%d-%m-%Y")}}</td>
+                                                    
+                                            </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-btn">
+                    {% if prev_page != 0 %}
+                    <form action="/invoices_list">
+                        <input type="hidden" value="{{prev_page}}" name="page">
+                        <input type="submit" value="Previous">
+                    </form>
+                    {% endif %}
+                    <form action="/invoices_list">
+                        <input type="hidden" value="{{next_page}}" name="page">
+                        <input type="submit" value="Next">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

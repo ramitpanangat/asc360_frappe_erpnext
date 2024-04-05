@@ -1,0 +1,54 @@
+{% extends "www/base_template.html" %}
+
+{% block activeIssuedTicket %}active{% endblock activeIssuedTicket %}
+
+{% block title %}Issued Ticket | {{booking.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/issued_ticket">Issued Ticket</a> > {{ booking.name }}</h3>
+                    </div>
+                    <h3 class="section-title"><strong>Issue Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="name">Ticket Number</label>
+                            <input type="text" name="name" readonly disabled value="{{booking.name}}">
+                            
+                            <label for="subject">Subject</label>
+                            <input type="text" name="subject" readonly disabled value="{{booking.subject}}">
+                            
+                            <label for="status">Status</label>
+                            <input type="text" name="status" readonly disabled value="{{booking.status}}">
+
+                            <label for="opening_date">Opening Date</label>
+                            <input type="text" name="opening_date" readonly disabled value="{{booking.opening_date}}">
+
+                            <label for="description">Description</label>
+                            <textarea name="description" readonly disabled rows="3">{{description}}</textarea>
+                            
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,120 @@
+{% extends "www/base_template.html" %}
+
+{% block activeActivity %}active{% endblock activeActivity %}
+
+{% block title %}Activity Master{% endblock title %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Activities</h3>
+                        <a href="/create_operator_activity" class="create-button">Create Activity</a>
+                    </div>
+                    
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <form action="/activity_master" method="post">
+                                <!-- Filter By Activity Name -->
+                                {% if param.name=="" or param.name==None %}
+                                    <input type="text" name="name" list="name" autocomplete="off" placeholder="Activity Name">
+                                {% else %}
+                                    <input type="text" name="name" list="name" autocomplete="off" value="{{param.name}}">
+                                {% endif %}
+                                <datalist id="name">
+                                   {% for activity in all_activities %}  
+                                       <option value="{{ activity.name }}">{{ activity.name }}</option>
+                                   {% endfor %}
+                                </datalist>
+                               
+                                <!-- Filter By Activity Level -->
+                                {% if param.activity_level=="" or param.activity_level==None %}
+                                    <input type="text" name="activity_level" list="level" placeholder="Level" autocomplete="off">
+                                {% else %}
+                                    <input type="text" name="activity_level" list="level" value="{{param.activity_level}}" autocomplete="off">
+                                {% endif %}
+                                <datalist id="level">
+                                   {% for level in levels %}
+                                       <option value="{{ level.name }}">{{ level.name }}</option>
+                                   {% endfor %}
+                                </datalist>
+       
+                               <!-- Filter By Activity Category -->
+                                {% if param.activity_category=="" or param.activity_category==None %}
+                                    <input type="text" name="activity_category" list="category" placeholder="Category" autocomplete="off">
+                                {% else %}
+                                    <input type="text" name="activity_category" list="category" value="{{param.activity_category}}" autocomplete="off">
+                                {% endif %}
+                               <datalist id="category">
+                                   {% for category in categories %}  
+                                       <option value="{{ category.name }}">{{ category.name }}</option>
+                                   {% endfor %}
+                               </datalist>
+       
+                               <!-- Filter By Activity Territory -->
+                               {% if param.territory=="" or param.territory==None %}
+                                    <input type="text" name="territory" list="territory" placeholder="Territory" autocomplete="off">
+                                {% else %}
+                                    <input type="text" name="territory" list="territory" value="{{param.territory}}" autocomplete="off">
+                                {% endif %}
+                               <datalist id="territory">
+                                   {% for territory in territories %}  
+                                        <option value="{{ territory.name }}">{{ territory.name }}</option>
+                                   {% endfor %}
+                               </datalist>
+       
+                               <input type="submit" value="Filter">                           
+                           </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Activity Name</th>
+                                        <th class="border-0">Level</th>
+                                        <th class="border-0">Category</th>
+                                        <th class="border-0">Territory</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if activities|length > 0 %}
+                                        {% for activity in activities %}
+											
+												<tr>
+													<td><a href="/view_activity/{{activity.name}}" class="item-view">{{activity.name}}</a></td>
+													<td>{{activity.activity_level}}</td>
+													<td>{{activity.activity_category}}</td>
+													<td>{{activity.activity_territory}}</td>
+												</tr>
+										
+										{% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

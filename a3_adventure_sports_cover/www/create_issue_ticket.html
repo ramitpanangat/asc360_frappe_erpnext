@@ -1,0 +1,21 @@
+{% extends "www/base_template.html" %}
+
+{% block title %}New Ticket{% endblock title %}
+
+{% block activeIssuedTicket %}active{% endblock activeIssuedTicket %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<iframe class="iframe" scrolling="no" src="/create-issue-ticket" style="border: 0px none; margin-left: 250px; margin-top: auto; width: 1300px; height: 3000px;">
+</iframe>
+
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="js/create_issuepolicy_style.js"></script>
+{% endblock script %}

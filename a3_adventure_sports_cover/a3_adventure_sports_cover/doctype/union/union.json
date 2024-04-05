@@ -1,0 +1,176 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:union_name",
+ "creation": "2022-03-29 14:02:48.631165",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "union_name",
+  "territory",
+  "email",
+  "felicitation_fee_paid",
+  "column_break_5",
+  "website",
+  "logo",
+  "registration_certificate",
+  "address_and_contact_section",
+  "address",
+  "column_break_11",
+  "contact",
+  "account_details_section",
+  "branch",
+  "ifsc_code",
+  "column_break_16",
+  "mode_of_business",
+  "pan_number",
+  "member_details_section",
+  "union_members",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "union_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Union Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "felicitation_fee_paid",
+   "fieldtype": "Currency",
+   "label": "Felicitation Fee Paid"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "registration_certificate",
+   "fieldtype": "Attach",
+   "label": "Registration Certificate"
+  },
+  {
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "account_details_section",
+   "fieldtype": "Section Break",
+   "label": "Account Details"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Data",
+   "label": "Branch"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_business",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Mode of Business",
+   "options": "\nOnline\nOffline\nBoth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "label": "PAN Number"
+  },
+  {
+   "fieldname": "member_details_section",
+   "fieldtype": "Section Break",
+   "label": "Member Details"
+  },
+  {
+   "fieldname": "union_members",
+   "fieldtype": "Table",
+   "label": "Union Members",
+   "options": "Union Member"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Union",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-09 23:13:01.644213",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Union",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

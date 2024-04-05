@@ -1,0 +1,86 @@
+{% extends "www/base_template.html" %}
+
+{% block activeEquipment %}active{% endblock activeEquipment %}
+
+{% block title %}Equipment Master{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Equipments</h3>
+                        <a href="/create_equipment" class="create-button">Create Equipment</a>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <!-- Filter Section -->
+                            <form action="/equipment_master" method="post">
+                                <!-- Filter by Equipment Type -->
+                                {% if params.equipment_type=="" or params.equipment_type==None %}
+                                    <input type="text" name="equipment_type" list="equipment_type" autocomplete="off" placeholder="Equipment Type">
+                                {% else %}
+                                    <input type="text" name="equipment_type" list="equipment_type" autocomplete="off" value="{{params.equipment_type}}">
+                                {% endif %}
+
+                                <datalist id="equipment_type">
+                                    <option value="Commercial">Commercial</option>
+                                    <option value="Solo">Solo</option>
+                                </datalist>
+                                
+                                 <input type="submit" value="Filter">
+                            </form>
+                           
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Equipment Name</th>
+                                        <th class="border-0">Equipment Type</th>
+                                        <th class="border-0">Equipment Code</th>
+                                        <th class="border-0">Maximum Capacity</th>
+                                        <th class="border-0">Minimum Capacity</th>
+                                        <th class="border-0">Model No.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if equipments|length>0 %}
+                                        {% for equipment in equipments %}
+                                            <tr>
+                                                <td><a href="/view_equipment/{{equipment.equipment_name}}" class="item-view">{{equipment.equipment_name}}</a></td>
+                                                <td>{{equipment.equipment_type}}</td>
+                                                <td>{{equipment.equipment_code}}</td>
+                                                <td>{{equipment.maximum_capacity}}</td>
+                                                <td>{{equipment.minimum_capacity}}</td>
+                                                <td>{{equipment.model_no}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="6" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

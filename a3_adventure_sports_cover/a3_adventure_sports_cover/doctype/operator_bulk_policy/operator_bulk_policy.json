@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{operator}-{MM}-{#####}",
+ "creation": "2022-12-01 09:58:10.146845",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator_details_section",
+  "operator",
+  "email",
+  "column_break_5",
+  "operator_balance",
+  "email_preference",
+  "policy_details_section",
+  "start_journey",
+  "policy_name",
+  "location_from",
+  "maximum_trip_duration",
+  "send_whatsapp_alert",
+  "column_break_11",
+  "end_journey",
+  "plan_name",
+  "location_to",
+  "premium_amount",
+  "customer_detail_sheet_upload_section",
+  "attach_excel"
+ ],
+ "fields": [
+  {
+   "fieldname": "attach_excel",
+   "fieldtype": "Attach",
+   "label": "Attach Excel"
+  },
+  {
+   "fieldname": "operator_details_section",
+   "fieldtype": "Section Break",
+   "label": "Operator Details"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fetch_from": "operator.email",
+   "fetch_if_empty": 1,
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "email_preference",
+   "fieldtype": "Select",
+   "label": "Email Preference",
+   "options": "\nSend to Operator Only\nSend to Customer & Operator\nSend to Customer Only\nDon't send Email"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "operator_balance",
+   "fieldtype": "Currency",
+   "label": "Operator Balance"
+  },
+  {
+   "fieldname": "policy_details_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Details"
+  },
+  {
+   "fieldname": "start_journey",
+   "fieldtype": "Date",
+   "label": "Start Journey"
+  },
+  {
+   "fieldname": "end_journey",
+   "fieldtype": "Date",
+   "label": "End Journey"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Link",
+   "label": "Policy Name",
+   "options": "Customised Policy"
+  },
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Link",
+   "label": "Plan Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "maximum_trip_duration",
+   "fieldtype": "Data",
+   "label": "Maximum Trip Duration"
+  },
+  {
+   "fieldname": "premium_amount",
+   "fieldtype": "Currency",
+   "label": "Premium Amount"
+  },
+  {
+   "fieldname": "customer_detail_sheet_upload_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Detail Sheet Upload"
+  },
+  {
+   "fieldname": "location_from",
+   "fieldtype": "Data",
+   "label": "Location From"
+  },
+  {
+   "fieldname": "location_to",
+   "fieldtype": "Data",
+   "label": "Location To"
+  },
+  {
+   "default": "No",
+   "fieldname": "send_whatsapp_alert",
+   "fieldtype": "Select",
+   "label": "Send WhatsApp Alert",
+   "options": "Yes\nNo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-12-02 15:10:18.051953",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Bulk Policy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

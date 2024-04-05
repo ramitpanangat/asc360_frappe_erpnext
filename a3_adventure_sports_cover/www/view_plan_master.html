@@ -1,0 +1,246 @@
+{% extends "www/base_template.html" %}
+
+{% block activePlanMaster %}active{% endblock activePlanMaster %}
+
+{% block title %}Plan Master | {{plan_master.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Plan Master > {{ plan_master.name }}</h3>
+                    </div>
+                    
+                    <h3 class="section-title"><strong>Product Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="policy_name">Policy Name</label>
+                            <input type="text" name="policy_name" readonly disabled value="{{plan_master.policy_name}}">
+                            
+                            <label for="scope_of_policy">Scope of Policy</label>
+                            <input type="text" name="scope_of_policy" readonly disabled value="{{plan_master.scope_of_policy}}">
+                            
+                            <label for="type_of_policy">Type of Policy</label>
+                            <input type="text" name="type_of_policy" readonly disabled value="{{plan_master.type_of_policy}}">
+                        </div>
+                        <div class="column-break">
+                            <label for="policy_name">Policy End Date</label>
+                            <input type="text" name="policy_name" readonly disabled value="{{plan_master.plan_end_date.strftime('%d-%m-%Y')}}">
+                            
+                            <label for="scope_of_policy">Status</label>
+                            <input type="text" name="scope_of_policy" readonly disabled value="{{plan_master.status}}">
+                            
+                        </div>
+                    </div>
+
+                    <h3 class="section-title"><strong>Plan Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Benefits</th>
+                                        {% if insurance_plan_details[0].plan_1 != "0" %}
+                                        <th class="border-0">Plan 1</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_2 != "0" %}
+                                        <th class="border-0">Plan 2</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_3 != "0" %}
+                                        <th class="border-0">Plan 3</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_4 != "0" %}
+                                        <th class="border-0">Plan 4</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_5 != "0" %}
+                                        <th class="border-0">Plan 5</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_6 != "0" %}
+                                        <th class="border-0">Plan 6</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_7 != "0" %}
+                                        <th class="border-0">Plan 7</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_8 != "0" %}
+                                        <th class="border-0">Plan 8</th>
+                                        {% endif %}
+                                        {% if insurance_plan_details[0].plan_9 != "0" %}
+                                        <th class="border-0">Plan 9</th>
+                                        {% if insurance_plan_details[0].plan_10 != "0" %}
+                                        <th class="border-0">Plan 10</th>
+                                        {% endif %}
+                                        {% endif %}
+                                        <th class="border-0">Deductible</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for details in insurance_plan_details %}
+											
+                                            <tr>
+                                                <td>{{details.policy_benefits}}</td>
+                                                {% if details.plan_1 != "0" %}
+                                                <td>{{details.plan_1}}</td>
+                                                {% endif %}
+                                                {% if details.plan_2 != "0" %}
+                                                <td>{{details.plan_2}}</td>
+                                                {% endif %}
+                                                {% if details.plan_3 != "0" %}
+                                                <td>{{details.plan_3}}</td>
+                                                {% endif %}
+                                                {% if details.plan_4 != "0" %}
+                                                <td>{{details.plan_4}}</td>
+                                                {% endif %}
+                                                {% if details.plan_5 != "0" %}
+                                                <td>{{details.plan_5}}</td>
+                                                {% endif %}
+                                                {% if details.plan_6 != "0" %}
+                                                <td>{{details.plan_6}}</td>
+                                                {% endif %}
+                                                {% if details.plan_7 != "0" %}
+                                                <td>{{details.plan_7}}</td>
+                                                {% endif %}
+                                                {% if details.plan_8 != "0" %}
+                                                <td>{{details.plan_8}}</td>
+                                                {% endif %}
+                                                {% if details.plan_9 != "0" %}
+                                                <td>{{details.plan_9}}</td>
+                                                {% endif %}
+                                                {% if details.plan_10 != "0" %}
+                                                <td>{{details.plan_10}}</td>
+                                                {% endif %}
+                                                <td>{{details.deductible}}</td>
+                                                
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 class="section-title"><strong>Policy Premium Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Days</th>
+                                        {% if policy_premium[0].plan_1 != 0 %}
+                                        <th class="border-0">Plan 1</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_2 != 0 %}
+                                        <th class="border-0">Plan 2</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_3 != 0 %}
+                                        <th class="border-0">Plan 3</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_4 != 0 %}
+                                        <th class="border-0">Plan 4</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_5 != 0 %}
+                                        <th class="border-0">Plan 5</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_6 != 0 %}
+                                        <th class="border-0">Plan 6</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_7 != 0 %}
+                                        <th class="border-0">Plan 7</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_8 != 0 %}
+                                        <th class="border-0">Plan 8</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_9 != 0 %}
+                                        <th class="border-0">Plan 9</th>
+                                        {% endif %}
+                                        {% if policy_premium[0].plan_10 != 0 %}
+                                        <th class="border-0">Plan 10</th>
+                                        {% endif %}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for premium in policy_premium %}
+											
+                                            <tr>
+                                                <td>{{premium.maximum_trip_duration}}</td>
+                                                {% if premium.plan_1 != 0 %}
+                                                <td>{{premium.plan_1}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_2 != 0 %}
+                                                <td>{{premium.plan_2}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_3 != 0 %}
+                                                <td>{{premium.plan_3}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_4 != 0 %}
+                                                <td>{{premium.plan_4}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_5 != 0 %}
+                                                <td>{{premium.plan_5}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_6 != 0 %}
+                                                <td>{{premium.plan_6}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_7 != 0 %}
+                                                <td>{{premium.plan_7}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_8 != 0 %}
+                                                <td>{{premium.plan_8}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_9 != 0 %}
+                                                <td>{{premium.plan_9}}</td>
+                                                {% endif %}
+                                                {% if premium.plan_10 != 0 %}
+                                                <td>{{premium.plan_10}}</td>
+                                                {% endif %}
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 class="section-title"><strong>Activity Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Activity Name</th>
+                                        <th class="border-0">Level</th>
+                                        <th class="border-0">Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for activity in activities %}
+											
+                                            <tr>
+                                                <td>{{activity.activity_name}}</td>
+                                                <td>{{activity.level}}</td>
+                                                <td>{{activity.category}}</td>
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

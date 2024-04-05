@@ -1,0 +1,94 @@
+{% extends "www/base_template.html" %}
+
+{% block activeIssuedTicket %}active{% endblock activeIssuedTicket %}
+
+{% block title %}Issued Ticket{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+<!-- <script type="text/application" src="apps/a3_adventure_sports_cover/a3_adventure_sports_cover/www/issued_ticket.js"></script> -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Issued Ticket</h3>
+                        <a href="/create_issue_ticket" class="create-button">Create Ticket</a>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <form action="/issued_ticket" method="post">
+                                <!-- Filter By Product Name -->
+                                {% if params.name=="" or params.name==None %}
+                                    <input type="text" name="name" list="name" autocomplete="off" placeholder="Booking Name">
+                                {% else %}
+                                    <input type="text" name="name" list="name" autocomplete="off" value="{{params.name}}">
+                                {% endif %}
+                                <datalist id="name">
+                                   {% for booking in all_bookings %}  
+                                       <option value="{{ booking.name }}">{{ booking.name }}</option>
+                                   {% endfor %}
+                                </datalist>
+                                
+                                <!-- Filter By Nature of Activity -->
+                                {% if params.nature_of_activity=="" or params.nature_of_activity==None %}
+                                    <input type="text" name="nature_of_activity" list="nature_of_activity" autocomplete="off" placeholder="Nature of Activity">
+                                {% else %}
+                                    <input type="text" name="nature_of_activity" list="nature_of_activity" autocomplete="off" value="{{params.nature_of_activity}}">
+                                {% endif %}
+                                <datalist id="nature_of_activity">
+                                   {% for nature_of_activity in nature_of_activities %}  
+                                       <option value="{{ nature_of_activity }}">{{ nature_of_activity }}</option>
+                                   {% endfor %}
+                                </datalist>
+                               <input type="submit" value="Filter">                           
+                           </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Ticket Number</th>
+                                        <th class="border-0">Subject</th>
+                                        <th class="border-0">Status</th>
+                                        <th class="border-0">Opened Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if bookings|length>0 %}
+                                        {% for booking in bookings %}
+                                            <tr>
+                                                <td><a href="/view_issued_ticket/{{booking.name}}" class="item-view">{{booking.name}}</a></td>
+                                                <td>{{booking.subject}}</td>
+                                                <td>{{booking.status}}</td>
+                                                <td>{{booking.opening_date.strftime("%d-%m-%Y")}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

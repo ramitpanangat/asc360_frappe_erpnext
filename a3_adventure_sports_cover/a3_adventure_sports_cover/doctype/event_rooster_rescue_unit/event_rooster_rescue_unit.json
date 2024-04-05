@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 18:30:29.279432",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "person",
+  "designation",
+  "sub_location",
+  "from_date",
+  "to_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "person",
+   "fieldtype": "Data",
+   "label": "Person"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Select",
+   "label": "Designation",
+   "options": "Doctor\nNurse"
+  },
+  {
+   "fieldname": "sub_location",
+   "fieldtype": "Data",
+   "label": "Sub-Location"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "Date From"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "Date To"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-25 15:36:20.435895",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Event Rooster Rescue Unit",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-11-05 23:17:39.636042",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "priority_ranking",
+  "policy_number",
+  "customer"
+ ],
+ "fields": [
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Policy Number",
+   "options": "B2B Policy Issue"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Customer"
+  },
+  {
+   "fieldname": "priority_ranking",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Priority Ranking"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-05 23:20:51.635230",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2B Cancel Queue Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

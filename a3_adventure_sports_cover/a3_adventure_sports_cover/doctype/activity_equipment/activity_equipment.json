@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-03-15 16:13:13.582684",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "equipment_name",
+  "equipment_type",
+  "max_capacity",
+  "min_capacity"
+ ],
+ "fields": [
+  {
+   "fieldname": "equipment_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Equipment Name",
+   "options": "Operator Equipment"
+  },
+  {
+   "fetch_from": "equipment_name.equipment_type",
+   "fieldname": "equipment_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Equipment Type",
+   "translatable": 1
+  },
+  {
+   "fetch_from": "equipment_name.maximum_capacity",
+   "fieldname": "max_capacity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Max Capacity",
+   "translatable": 1
+  },
+  {
+   "fetch_from": "equipment_name.minimum_capacity",
+   "fieldname": "min_capacity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Min Capacity",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-03-23 19:09:53.756713",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Activity Equipment",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

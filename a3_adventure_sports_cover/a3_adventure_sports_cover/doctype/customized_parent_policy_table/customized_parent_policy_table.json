@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-10-10 11:56:39.279943",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "parent_policy",
+  "policy_provider",
+  "primary_policy"
+ ],
+ "fields": [
+  {
+   "fetch_from": "parent_policy.policy_provider",
+   "fetch_if_empty": 1,
+   "fieldname": "policy_provider",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Policy Provider",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "primary_policy",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Primary Policy"
+  },
+  {
+   "fieldname": "parent_policy",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Parent Policy",
+   "options": "Policy Master"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-10-10 12:05:04.698655",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Customized Parent Policy Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

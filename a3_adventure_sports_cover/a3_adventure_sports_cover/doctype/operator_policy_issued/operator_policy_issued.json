@@ -1,0 +1,466 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:ASC360-MDBK-{MM}-{YY}-PI{#####}",
+ "creation": "2022-03-15 16:31:42.400857",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "endorsed",
+  "endorsement_details_section",
+  "endorsement",
+  "original_policy",
+  "endorsement_count",
+  "section_break_4",
+  "operator",
+  "batch_id",
+  "supplier_policy_id",
+  "column_break_2",
+  "customer_details_section",
+  "name1",
+  "gender",
+  "email_id",
+  "address",
+  "pan_number",
+  "column_break_6",
+  "dob",
+  "nationality",
+  "contact",
+  "aadhaar_number",
+  "passport_number",
+  "nominee_details_section",
+  "nominee_name",
+  "nominee_contact_number",
+  "column_break_16",
+  "nominee_relationship",
+  "other_details_section",
+  "pre_existing_disease",
+  "are_you_club_member_of_organizing_committee",
+  "experience_with_the_sport_or_activity",
+  "number_of_years_of_experience_with_the_sport_or_activity",
+  "have_you_obtained_fitness_certificate",
+  "column_break_22",
+  "details_of_pre_existing_disease",
+  "name_of_the_sport_equipment_used_in_sport_activity",
+  "proficiency_level",
+  "product_details_section",
+  "operator_product",
+  "booking_date",
+  "nature_of_activity",
+  "any_previous_insurance_ever_been_declined",
+  "column_break_35",
+  "time_of_day_of_activity",
+  "activity_date",
+  "doctor_or_medical_practitioner_on_site",
+  "manager_or_trainer_to_group_members_ratio",
+  "policy_details_section",
+  "activity",
+  "premium",
+  "end_date",
+  "period_of_issuance",
+  "column_break_13",
+  "policy",
+  "start_date",
+  "policy_provider",
+  "equipment_details_section",
+  "operator_equipment",
+  "staff_details_section",
+  "operator_staff",
+  "transportation_details_section",
+  "transportation_type",
+  "column_break_54",
+  "specifications",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "policy_details_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Details"
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Policy",
+   "options": "Item"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "period_of_issuance",
+   "fieldtype": "Data",
+   "label": "Period of Issuance"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "premium",
+   "fieldtype": "Data",
+   "label": "Premium"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "policy_provider",
+   "fieldtype": "Data",
+   "label": "Policy Provider"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "label": "PAN Number"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number"
+  },
+  {
+   "fieldname": "nominee_name",
+   "fieldtype": "Data",
+   "label": "Nominee Name"
+  },
+  {
+   "fieldname": "nominee_contact_number",
+   "fieldtype": "Data",
+   "label": "Nominee Contact Number"
+  },
+  {
+   "fieldname": "nominee_relationship",
+   "fieldtype": "Data",
+   "label": "Nominee Relationship"
+  },
+  {
+   "fieldname": "pre_existing_disease",
+   "fieldtype": "Select",
+   "label": "Pre existing Disease",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "details_of_pre_existing_disease",
+   "fieldtype": "Small Text",
+   "label": "Details of Pre existing Disease"
+  },
+  {
+   "fieldname": "are_you_club_member_of_organizing_committee",
+   "fieldtype": "Select",
+   "label": "Are you Club Member of Organizing Committee",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "experience_with_the_sport_or_activity",
+   "fieldtype": "Select",
+   "label": "Experience with the Sport or activity",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "name_of_the_sport_equipment_used_in_sport_activity",
+   "fieldtype": "Data",
+   "label": "Name of the Sport Equipment used in Sport Activity"
+  },
+  {
+   "fieldname": "number_of_years_of_experience_with_the_sport_or_activity",
+   "fieldtype": "Data",
+   "label": "Number of years of experience with the Sport or Activity"
+  },
+  {
+   "fieldname": "have_you_obtained_fitness_certificate",
+   "fieldtype": "Select",
+   "label": "Have you obtained Fitness Certificate",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "proficiency_level",
+   "fieldtype": "Select",
+   "label": "Proficiency Level",
+   "options": "\nTourist/Amateur\nWith some Training",
+   "translatable": 1
+  },
+  {
+   "fieldname": "nominee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Nominee Details"
+  },
+  {
+   "fieldname": "other_details_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "product_details_section",
+   "fieldtype": "Section Break",
+   "label": "Product Details"
+  },
+  {
+   "fieldname": "operator_product",
+   "fieldtype": "Link",
+   "label": "Operator Product",
+   "options": "Operator Product"
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "activity_date",
+   "fieldtype": "Date",
+   "label": "Activity Date"
+  },
+  {
+   "fieldname": "time_of_day_of_activity",
+   "fieldtype": "Select",
+   "label": "Time of Day of Activity",
+   "options": "\nDay\nNight",
+   "translatable": 1
+  },
+  {
+   "fieldname": "doctor_or_medical_practitioner_on_site",
+   "fieldtype": "Select",
+   "label": "Doctor or Medical Practitioner on Site",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "nature_of_activity",
+   "fieldtype": "Select",
+   "label": "Nature of activity",
+   "options": "\nExploratory\nDefined Route/Location",
+   "translatable": 1
+  },
+  {
+   "description": "Any Insurance ever been declined,postponed or made subject to conditions",
+   "fieldname": "any_previous_insurance_ever_been_declined",
+   "fieldtype": "Select",
+   "label": "Any previous Insurance ever been Declined",
+   "options": "\nYes\nNo",
+   "translatable": 1
+  },
+  {
+   "fieldname": "manager_or_trainer_to_group_members_ratio",
+   "fieldtype": "Select",
+   "label": "Manager or Trainer to Group Members Ratio",
+   "options": "01:01\n01:>10\n01:10"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "activity",
+   "fieldtype": "Link",
+   "label": "Activity",
+   "options": "Operator Activity"
+  },
+  {
+   "fieldname": "equipment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment Details"
+  },
+  {
+   "fieldname": "operator_equipment",
+   "fieldtype": "Table",
+   "label": "Operator Equipment",
+   "options": "Booking Equipment"
+  },
+  {
+   "fieldname": "staff_details_section",
+   "fieldtype": "Section Break",
+   "label": "Staff Details"
+  },
+  {
+   "fieldname": "operator_staff",
+   "fieldtype": "Table",
+   "label": "Operator Staff",
+   "options": "Booking Staff"
+  },
+  {
+   "fieldname": "transportation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Transportation Details"
+  },
+  {
+   "fieldname": "transportation_type",
+   "fieldtype": "Select",
+   "label": "Transportation Type",
+   "options": "Taxi\nHelicopter\nBus\nTrain"
+  },
+  {
+   "fieldname": "column_break_54",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "specifications",
+   "fieldtype": "Small Text",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "aadhaar_number",
+   "fieldtype": "Data",
+   "label": "Aadhar Number"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Operator Policy Issued",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "batch_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Batch ID"
+  },
+  {
+   "fieldname": "supplier_policy_id",
+   "fieldtype": "Data",
+   "label": "Supplier Policy ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "endorsed",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Endorsed",
+   "options": "0"
+  },
+  {
+   "depends_on": "eval:doc.endorsed==1;",
+   "fieldname": "endorsement_details_section",
+   "fieldtype": "Section Break",
+   "label": "Endorsement Details"
+  },
+  {
+   "fieldname": "endorsement",
+   "fieldtype": "Link",
+   "label": "Endorsement",
+   "options": "Endorsement Form"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "original_policy",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Original Policy"
+  },
+  {
+   "fieldname": "endorsement_count",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Endorsement Count"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Endorsement Form",
+   "link_fieldname": "policy_detail"
+  }
+ ],
+ "modified": "2022-07-01 18:13:24.592465",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Policy Issued",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-03-29 13:45:36.976252",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "maximum_trip_duration",
+  "min_age",
+  "max_age",
+  "plan_1",
+  "plan_2",
+  "plan_3",
+  "plan_4"
+ ],
+ "fields": [
+  {
+   "fieldname": "maximum_trip_duration",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Maximum Trip Duration",
+   "translatable": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "plan_1",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 1"
+  },
+  {
+   "bold": 1,
+   "fieldname": "plan_2",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 2"
+  },
+  {
+   "bold": 1,
+   "fieldname": "plan_3",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 3"
+  },
+  {
+   "bold": 1,
+   "fieldname": "plan_4",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 4"
+  },
+  {
+   "fieldname": "min_age",
+   "fieldtype": "Data",
+   "label": "Min Age Limit"
+  },
+  {
+   "fieldname": "max_age",
+   "fieldtype": "Data",
+   "label": "Max Age Limit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-07-19 17:37:39.864091",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Policy Premium",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

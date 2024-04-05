@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 16:53:24.641286",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "doctor",
+  "doctor_id",
+  "date_of_travel",
+  "location",
+  "start",
+  "end",
+  "date_of_birth",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "doctor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Doctor ",
+   "options": "Doctor"
+  },
+  {
+   "fieldname": "doctor_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Doctor ID"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_travel",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Service Date"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Location",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Date",
+   "label": "Start "
+  },
+  {
+   "fieldname": "end",
+   "fieldtype": "Date",
+   "label": "End "
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Status",
+   "options": "Not Connected\nRejected\nAccepted"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-23 13:21:40.723150",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "On Call Doctor Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,35 @@
+{% extends "www/base_template.html" %}
+
+{% block activeSalesSummary %}active{% endblock activeSalesSummary %}
+{% block title %}Sales Summary Report{% endblock title %}
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Sales Summary</h3>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                    </div>
+                        {% if table %}{{table}}{% else %}No Data Found{% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

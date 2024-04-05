@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-07-12 12:45:07.967618",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document",
+  "document_type",
+  "documnet_number",
+  "attach_document"
+ ],
+ "fields": [
+  {
+   "fieldname": "document",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Document"
+  },
+  {
+   "fieldname": "documnet_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Documnet Number"
+  },
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "label": "Document Type",
+   "options": "\nPassport\nAadhaar Card\nPAN Card\nLicense\nVoter ID"
+  },
+  {
+   "fieldname": "attach_document",
+   "fieldtype": "Attach",
+   "label": "Attach Document"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-25 11:31:01.647774",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "ID Proof",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

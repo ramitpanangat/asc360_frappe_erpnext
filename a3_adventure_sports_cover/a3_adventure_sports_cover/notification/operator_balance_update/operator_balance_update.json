@@ -1,0 +1,30 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.operator_payment == \"Operator Payment\"",
+ "creation": "2022-10-21 15:00:58.281263",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Payment Entry",
+ "enabled": 1,
+ "event": "Submit",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Dear {{doc.party}},\n\nYour account is credited with amount {{doc.paid_amount}}.\n\nThank You.",
+ "modified": "2023-01-10 16:22:56.060790",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Balance Update",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "email"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "sender": "Adventure Sports Cover 360",
+ "sender_email": "clientservices@asc360.com",
+ "subject": "Amount credited to your account in ASC360"
+}

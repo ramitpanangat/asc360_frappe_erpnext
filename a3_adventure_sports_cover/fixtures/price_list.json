@@ -1,0 +1,71 @@
+[
+ {
+  "buying": 0,
+  "countries": [
+   {
+    "country": "China",
+    "parent": "CNY Selling",
+    "parentfield": "countries",
+    "parenttype": "Price List"
+   }
+  ],
+  "currency": "CNY",
+  "docstatus": 0,
+  "doctype": "Price List",
+  "enabled": 1,
+  "modified": "2022-08-30 18:47:53.840316",
+  "name": "CNY Selling",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "price_list_name": "CNY Selling",
+  "price_not_uom_dependent": 0,
+  "selling": 1
+ },
+ {
+  "buying": 0,
+  "countries": [
+   {
+    "country": "Japan",
+    "parent": "JPY Selling",
+    "parentfield": "countries",
+    "parenttype": "Price List"
+   }
+  ],
+  "currency": "JPY",
+  "docstatus": 0,
+  "doctype": "Price List",
+  "enabled": 1,
+  "modified": "2022-08-30 18:48:30.605336",
+  "name": "JPY Selling",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "price_list_name": "JPY Selling",
+  "price_not_uom_dependent": 0,
+  "selling": 1
+ },
+ {
+  "buying": 0,
+  "countries": [
+   {
+    "country": "United States",
+    "parent": "USD Selling",
+    "parentfield": "countries",
+    "parenttype": "Price List"
+   }
+  ],
+  "currency": "USD",
+  "docstatus": 0,
+  "doctype": "Price List",
+  "enabled": 1,
+  "modified": "2022-08-30 17:34:19.066141",
+  "name": "USD Selling",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "price_list_name": "USD Selling",
+  "price_not_uom_dependent": 0,
+  "selling": 1
+ }
+]

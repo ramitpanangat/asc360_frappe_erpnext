@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 19:43:42.179963",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_number",
+  "policy_holder_name",
+  "column_break_3",
+  "policy_number",
+  "section_break_5",
+  "insurance_cover",
+  "section_break_7",
+  "payments"
+ ],
+ "fields": [
+  {
+   "fieldname": "incident_number",
+   "fieldtype": "Link",
+   "label": "Incident Number",
+   "options": "Incident Report"
+  },
+  {
+   "fieldname": "policy_holder_name",
+   "fieldtype": "Link",
+   "label": "Policy Holder Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "label": "Policy Number",
+   "options": "Operator Policy Issued"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "insurance_cover",
+   "fieldtype": "Table",
+   "label": "Insurance Cover",
+   "options": "EVAC Benefits Table"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payments",
+   "fieldtype": "Table",
+   "label": "Payments",
+   "options": "EVAC Payment Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-22 11:11:25.909971",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "EVAC Payment",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

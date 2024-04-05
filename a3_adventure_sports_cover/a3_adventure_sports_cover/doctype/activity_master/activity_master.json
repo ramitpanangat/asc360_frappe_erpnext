@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{activity_name}",
+ "creation": "2022-07-15 11:47:07.921775",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "activity_name",
+  "activity_level",
+  "column_break_3",
+  "activity_category",
+  "prime_activity",
+  "section_break_6",
+  "levels_of_activity"
+ ],
+ "fields": [
+  {
+   "fieldname": "activity_name",
+   "fieldtype": "Data",
+   "label": "Activity Name"
+  },
+  {
+   "fieldname": "activity_level",
+   "fieldtype": "Link",
+   "label": "Activity Level",
+   "options": "Activity Levels"
+  },
+  {
+   "fieldname": "activity_category",
+   "fieldtype": "Link",
+   "label": "Activity Category",
+   "options": "Activity Category"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prime_activity",
+   "fieldtype": "Select",
+   "label": "Primary Activity",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "levels_of_activity",
+   "fieldtype": "Table",
+   "label": "Levels of Activity",
+   "options": "Levels of Provider"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-08 15:53:32.982280",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Activity Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

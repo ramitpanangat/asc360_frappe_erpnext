@@ -1,0 +1,197 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{activity}",
+ "creation": "2022-03-15 16:06:38.364935",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator",
+  "column_break_2",
+  "is_primary_activity",
+  "activity_details_section",
+  "activity",
+  "activity_territory",
+  "activity_level",
+  "activity_category",
+  "contact_activity",
+  "column_break_4",
+  "description",
+  "policy_details_section",
+  "activity_policy",
+  "section_break_11",
+  "activity_tax",
+  "price_including_tax",
+  "column_break_13",
+  "activity_price",
+  "net_amount",
+  "equipment_details_section",
+  "activity_equipments",
+  "staff_details_section",
+  "activity_staff"
+ ],
+ "fields": [
+  {
+   "fieldname": "activity_details_section",
+   "fieldtype": "Section Break",
+   "label": "Activity Details"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_activity",
+   "fieldtype": "Select",
+   "label": "Contact Activity",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "activity_territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Activity Territory",
+   "options": "Territory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "policy_details_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Policy Details"
+  },
+  {
+   "fieldname": "activity_policy",
+   "fieldtype": "Table",
+   "label": "Activity Policy",
+   "options": "Activity Policy"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "description": "in %",
+   "fieldname": "activity_tax",
+   "fieldtype": "Float",
+   "label": "Activity Tax"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "activity_price",
+   "fieldtype": "Currency",
+   "label": "Activity Price"
+  },
+  {
+   "fieldname": "equipment_details_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Equipment Details"
+  },
+  {
+   "fieldname": "activity_equipments",
+   "fieldtype": "Table",
+   "label": "Activity Equipments",
+   "options": "Activity Equipment"
+  },
+  {
+   "fieldname": "staff_details_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Staff Details"
+  },
+  {
+   "fieldname": "activity_staff",
+   "fieldtype": "Table",
+   "label": "Activity Staff",
+   "options": "Activity Staff"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "default": "1",
+   "fieldname": "price_including_tax",
+   "fieldtype": "Check",
+   "label": "Price Including Tax"
+  },
+  {
+   "depends_on": "eval: doc.price_including_tax == \"0\"",
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_primary_activity",
+   "fieldtype": "Check",
+   "label": "Is Primary Activity"
+  },
+  {
+   "fetch_from": "activity.activity_level",
+   "fetch_if_empty": 1,
+   "fieldname": "activity_level",
+   "fieldtype": "Link",
+   "label": "Activity Level",
+   "options": "Activity Levels"
+  },
+  {
+   "fetch_from": "activity.activity_category",
+   "fetch_if_empty": 1,
+   "fieldname": "activity_category",
+   "fieldtype": "Link",
+   "label": "Activity Category",
+   "options": "Activity Category"
+  },
+  {
+   "fieldname": "activity",
+   "fieldtype": "Link",
+   "label": "Activity Name",
+   "options": "Activity Master",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-31 11:33:23.278110",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Activity",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

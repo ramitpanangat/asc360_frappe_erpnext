@@ -1,0 +1,76 @@
+{% extends "www/base_template.html" %}
+
+{% block activePayment %}active{% endblock activePayment %}
+
+{% block title %}Activity | {{payment.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="payments">Payment Entry</a> > {{ payment.name }}</h3>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="customer">Customer</label>
+                            <input type="text" name="customer" readonly disabled value="{{payment.party_name}}">
+                            
+                            <label for="date_of_birth">Payment Type</label>
+                            <input type="text" name="date_of_birth" readonly disabled value="{{payment.payment_type}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="date_of_issue">Posting Date</label>
+                            <input type="text" name="date_of_issue" readonly disabled value="{{payment.posting_date.strftime('%d-%m-%Y')}}">
+                            
+                            <label for="operator">Mode Of Payment</label>
+                            <input type="text" name="operator" readonly disabled value="{{payment.mode_of_payment}}"> 
+                        </div>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            {% for row in invoice %}
+                                <label for="master_policy">Invoice Number</label>
+                                <input type="text" name="master_policy" readonly disabled value="{{row.reference_name}}">
+                            {% endfor %}
+                            
+                            <label for="quantity">Account Paid To</label>
+                            <input type="text" name="quantity" readonly disabled value="{{payment.paid_to}}">
+                        </div>
+
+                        <div class="column-break">
+                            {% for row in invoice %}
+                                <label for="invoice_amount">Invoice Amount</label>
+                                <input type="text" name="invoice_amount" readonly disabled value="{{row.outstanding_amount}}">
+                            {% endfor %}
+
+                            <label for="policy">Paid Amount</label>
+                            <input type="text" name="policy" readonly disabled value="{{payment.paid_amount}}">
+                        </div>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="beginning_date">Remarks</label>
+                            <textarea name="beginning_date" readonly disabled rows="3">{{payment.remarks}}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

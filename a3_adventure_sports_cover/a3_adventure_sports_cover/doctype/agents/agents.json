@@ -1,0 +1,171 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {agent_name}",
+ "creation": "2022-09-12 12:20:29.318780",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "agent_name",
+  "phone_number",
+  "agent_code",
+  "column_break_2",
+  "agent_email",
+  "territory",
+  "commission_details_section",
+  "commission_type",
+  "column_break_5",
+  "commission_amount",
+  "commission_percentage",
+  "operator_commission",
+  "op_commission_type",
+  "column_break_10",
+  "op_commission_amount",
+  "op_commission_percentage",
+  "credentials_section",
+  "sales_partner_id",
+  "supplier_id",
+  "column_break_19",
+  "customer_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name"
+  },
+  {
+   "fieldname": "agent_email",
+   "fieldtype": "Data",
+   "label": "Agent Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "commission_details_section",
+   "fieldtype": "Section Break",
+   "label": "Commission for New Customer"
+  },
+  {
+   "fieldname": "commission_type",
+   "fieldtype": "Select",
+   "label": "Commission Type",
+   "options": "\nAmount\nPercentage"
+  },
+  {
+   "depends_on": "eval: doc.commission_type==\"Amount\"",
+   "fieldname": "commission_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Amount"
+  },
+  {
+   "depends_on": "eval: doc.commission_type==\"Percentage\"",
+   "fieldname": "commission_percentage",
+   "fieldtype": "Float",
+   "label": "Commission Percentage"
+  },
+  {
+   "fieldname": "operator_commission",
+   "fieldtype": "Section Break",
+   "label": "Commission for New Operator"
+  },
+  {
+   "default": "Amount",
+   "fieldname": "op_commission_type",
+   "fieldtype": "Select",
+   "label": "Commission Type",
+   "options": "\nAmount\nPercentage"
+  },
+  {
+   "depends_on": "eval: doc.op_commission_type==\"Amount\"",
+   "fieldname": "op_commission_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Amount"
+  },
+  {
+   "depends_on": "eval: doc.op_commission_type==\"Percentage\"",
+   "fieldname": "op_commission_percentage",
+   "fieldtype": "Float",
+   "label": "Commission Percentage"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "credentials_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Credentials"
+  },
+  {
+   "fieldname": "sales_partner_id",
+   "fieldtype": "Link",
+   "label": "Sales Partner ID",
+   "options": "Sales Partner"
+  },
+  {
+   "fieldname": "supplier_id",
+   "fieldtype": "Link",
+   "label": "Supplier ID",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_id",
+   "fieldtype": "Link",
+   "label": "Customer ID",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "agent_code",
+   "fieldtype": "Data",
+   "label": "Agent Code"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-26 18:51:34.669673",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Agents",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

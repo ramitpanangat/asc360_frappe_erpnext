@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-03-15 16:47:20.775847",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "equipment",
+  "activity_name",
+  "max_capacity",
+  "min_capacity",
+  "model_number",
+  "hours_clocked"
+ ],
+ "fields": [
+  {
+   "fieldname": "equipment",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Equipment",
+   "options": "Operator Equipment"
+  },
+  {
+   "fetch_from": "equipment.maximum_capacity",
+   "fieldname": "max_capacity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Max Capacity",
+   "translatable": 1
+  },
+  {
+   "fetch_from": "equipment.minimum_capacity",
+   "fieldname": "min_capacity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Min Capacity",
+   "translatable": 1
+  },
+  {
+   "fetch_from": "equipment.model_no",
+   "fieldname": "model_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Model Number",
+   "translatable": 1
+  },
+  {
+   "fetch_from": "equipment.hours_clocked",
+   "fieldname": "hours_clocked",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Hours Clocked",
+   "translatable": 1
+  },
+  {
+   "fieldname": "activity_name",
+   "fieldtype": "Link",
+   "label": "Activity Name",
+   "options": "Operator Activity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-03-26 16:24:34.929943",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Booking Equipment",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

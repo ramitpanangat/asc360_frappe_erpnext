@@ -1,0 +1,332 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:name1",
+ "creation": "2022-03-15 15:19:19.144729",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "staff_id",
+  "staff_type",
+  "date_of_birth",
+  "height",
+  "column_break_6",
+  "name1",
+  "gender",
+  "employment_type",
+  "weight",
+  "address_and_contact_section",
+  "address",
+  "column_break_13",
+  "contact",
+  "emergency_contact_details_section",
+  "contact_name",
+  "contact_address",
+  "column_break_18",
+  "contact_number",
+  "health_details_section",
+  "blood_group",
+  "column_break_22",
+  "pre_existing_medical_conditions",
+  "employment_details_section",
+  "contract_type",
+  "joining_date",
+  "total_work_hour",
+  "column_break_24",
+  "company_name",
+  "status",
+  "id_details_section",
+  "staff_photograph",
+  "column_break_29",
+  "id_card",
+  "id_card_number",
+  "id_card_photo",
+  "license_details_section",
+  "license_number",
+  "license_issue_date",
+  "first_license_issue_date",
+  "column_break_36",
+  "license_issuing_authority",
+  "license_expiry_date",
+  "license_photo"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "staff_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Staff ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "staff_type",
+   "fieldtype": "Select",
+   "label": "Staff Type",
+   "options": "\nGuide\nInstructor\nPilot\nTrainer\nManager",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "description": "In inch",
+   "fieldname": "height",
+   "fieldtype": "Data",
+   "label": "Height"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "employment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employment Type",
+   "options": "\nFull Time\nPart Time"
+  },
+  {
+   "description": "In Kg",
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "emergency_contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Emergency Contact Details"
+  },
+  {
+   "fieldname": "contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_address",
+   "fieldtype": "Data",
+   "label": "Contact Address"
+  },
+  {
+   "fieldname": "employment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Employment Details"
+  },
+  {
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "label": "Contract Type",
+   "options": "\nContract\nEmployed"
+  },
+  {
+   "default": "Today",
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Joining Date",
+   "reqd": 1
+  },
+  {
+   "description": "In Hours",
+   "fieldname": "total_work_hour",
+   "fieldtype": "Data",
+   "label": "Total Work Hour"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nActive\nInactive",
+   "reqd": 1
+  },
+  {
+   "fieldname": "id_details_section",
+   "fieldtype": "Section Break",
+   "label": "ID Details"
+  },
+  {
+   "fieldname": "staff_photograph",
+   "fieldtype": "Attach Image",
+   "label": "Staff Photograph"
+  },
+  {
+   "fieldname": "id_card",
+   "fieldtype": "Select",
+   "label": "ID Card",
+   "options": "\nAadhaar Card\nPAN\nPassport\nDriver's License\nVoter's ID"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_card_number",
+   "fieldtype": "Data",
+   "label": "ID Card Number"
+  },
+  {
+   "fieldname": "id_card_photo",
+   "fieldtype": "Attach",
+   "label": "ID Card Photo"
+  },
+  {
+   "fieldname": "license_details_section",
+   "fieldtype": "Section Break",
+   "label": "License Details"
+  },
+  {
+   "fieldname": "license_number",
+   "fieldtype": "Data",
+   "label": "License Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_issue_date",
+   "fieldtype": "Date",
+   "label": "License Issue Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_license_issue_date",
+   "fieldtype": "Date",
+   "label": "First License Issue Date"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "license_issuing_authority",
+   "fieldtype": "Data",
+   "label": "License Issuing Authority",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_expiry_date",
+   "fieldtype": "Date",
+   "label": "License Expiry Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "license_photo",
+   "fieldtype": "Attach",
+   "label": "License Photo"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Link",
+   "label": "Company Name",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "health_details_section",
+   "fieldtype": "Section Break",
+   "label": "Health Details"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Select",
+   "label": "Blood Group",
+   "options": "\nO+\nO-\nA+\nA-\nB+\nB-\nAB+\nAB-"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pre_existing_medical_conditions",
+   "fieldtype": "Small Text",
+   "label": "Pre Existing Medical Conditions, if any"
+  }
+ ],
+ "image_field": "staff_photograph",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-03-24 18:34:01.847270",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Staff",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

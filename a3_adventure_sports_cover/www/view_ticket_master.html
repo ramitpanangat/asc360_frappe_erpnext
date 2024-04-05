@@ -1,0 +1,132 @@
+{% extends "www/base_template.html" %}
+
+{% block activeTicketMaster %}active{% endblock activeTicketMaster %}
+
+{% block title %}Ticket Master | {{ticket.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/ticket_master">Ticket Master</a> > {{ ticket.name }}</h3>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="package_type">Package Type</label>
+                            <input type="text" name="package_type" readonly disabled value="{{ticket.package_type}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="package_category">Package Category</label>
+                            <input type="text" name="package_category" readonly disabled value="{{ticket.package_category}}">
+                        </div>
+                    </div>
+                    <h3 class="section-title"><strong>Activity Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Activity Name</th>
+                                        <th class="border-0">Activity Category</th>
+                                        <th class="border-0">Activity Price</th>
+                                        <th class="border-0">Activity Tax</th>
+                                        <th class="border-0">Insurance Policy</th>
+                                        <th class="border-0">Insurance Policy Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for activity in activity_table %}
+											
+                                            <tr>
+                                                <td>{{activity.activity_name}}</td>
+                                                <td>{{activity.activity_category}}</td>
+                                                <td>{{activity.activity_price}}</td>
+                                                <td>{{activity.activity_tax}}</td>
+                                                <td>{{activity.insurance_policy}}</td>
+                                                <td>{{activity.insurance_policy_price}}</td>
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h3 class="section-title"><strong>Transportation Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="transportation_type">Transportation Type</label>
+                            <input type="text" name="transportation_type" readonly disabled value="{{ticket.transportation_type}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="specification">Specification</label>
+                            <textarea type="text" rows="5" name="specification" readonly disabled>{{ticket.specification}}</textarea>
+                        </div>
+                    </div>
+
+                    <h3 class="section-title"><strong>Accomodation Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="accomodation_type">Accomodation Type</label>
+                            <input type="text" name="accomodation_type" readonly disabled value="{{ticket.accomodation_type}}">
+                            
+                            <label for="contact">Contact</label>
+                            <input type="text" name="contact" readonly disabled value="{{ticket.contact}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="accomodation_name">Accomodation Name</label>
+                            <input type="text" name="accomodation_name" readonly disabled value="{{ticket.accomodation_name}}">
+                            
+                            <label for="address">Address</label>
+                            <input type="text" name="address" readonly disabled value="{{ticket.address}}">
+                        </div>
+                    </div>
+
+                    <h3 class="section-title"><strong>Meal Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Meal Type</th>
+                                        <th class="border-0">Meal Required</th>
+                                        <th class="border-0">Remarks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for meal in meals %}
+											
+                                            <tr>
+                                                <td>{{meal.meal_type}}</td>
+                                                <td>{{meal.meal_required}}</td>
+                                                <td>{{meal.remarks}}</td>
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,162 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 19:15:36.337102",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_details_section",
+  "incident_number",
+  "policy_number",
+  "connection_status",
+  "column_break_4",
+  "date_and_time",
+  "policy_holder_name",
+  "vendor_details_section",
+  "vendor_list",
+  "section_break_7",
+  "conveyance_details",
+  "section_break_10",
+  "destination_hospital",
+  "column_break_14",
+  "doctor_onboarding",
+  "evacuation_details_section",
+  "evacuation_type",
+  "evacuation_status",
+  "column_break_19",
+  "evacuation_priority"
+ ],
+ "fields": [
+  {
+   "fieldname": "incident_number",
+   "fieldtype": "Link",
+   "label": "Incident Number",
+   "options": "Incident Report"
+  },
+  {
+   "fieldname": "policy_holder_name",
+   "fieldtype": "Link",
+   "label": "Policy Holder Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "label": "Policy Number",
+   "options": "Operator Policy Issued"
+  },
+  {
+   "fieldname": "connection_status",
+   "fieldtype": "Select",
+   "label": "Connection Status",
+   "options": "\nCall Arranged\nNo Network\nNot Required"
+  },
+  {
+   "fieldname": "date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Date and Time"
+  },
+  {
+   "fieldname": "destination_hospital",
+   "fieldtype": "Data",
+   "label": "Destination Hospital"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Conveyance Details"
+  },
+  {
+   "fieldname": "conveyance_details",
+   "fieldtype": "Table",
+   "label": "Conveyance List",
+   "options": "Vendor Conveyance"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Doctor & Hostpital Details"
+  },
+  {
+   "fieldname": "doctor_onboarding",
+   "fieldtype": "Link",
+   "label": "Doctor onboarding",
+   "options": "Doctor On Boarding"
+  },
+  {
+   "fieldname": "evacuation_type",
+   "fieldtype": "Link",
+   "label": "Evacuation Type",
+   "options": "Evacuation Type"
+  },
+  {
+   "fieldname": "evacuation_priority",
+   "fieldtype": "Link",
+   "label": "Evacuation Priority",
+   "options": "Evacuation Priority"
+  },
+  {
+   "fieldname": "evacuation_status",
+   "fieldtype": "Link",
+   "label": "Evacuation Status",
+   "options": "Evacuation Status"
+  },
+  {
+   "fieldname": "incident_details_section",
+   "fieldtype": "Section Break",
+   "label": "Incident Details"
+  },
+  {
+   "fieldname": "vendor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vendor Details"
+  },
+  {
+   "fieldname": "vendor_list",
+   "fieldtype": "Table",
+   "label": "Vendor List",
+   "options": "Vendor Table"
+  },
+  {
+   "fieldname": "evacuation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Evacuation Details"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-23 13:11:23.128560",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Onboard Vendor",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

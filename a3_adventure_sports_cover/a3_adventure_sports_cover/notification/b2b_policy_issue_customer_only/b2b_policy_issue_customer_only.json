@@ -1,0 +1,31 @@
+{
+ "attach_print": 1,
+ "channel": "Email",
+ "condition": "doc.operator_email_preference==\"Send to Customer Only\" and doc.policy_type==\"Single Policy\"",
+ "creation": "2022-08-22 19:31:00.357015",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "B2B Policy Issue",
+ "enabled": 1,
+ "event": "Submit",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "\n\n{% set index=namespace(value=1) %}\n\n<p style=\"text-align: center;\"><img src=\"https://asc360-prod.frappe.cloud/files/logo.png\" width=\"100\"></p>\n<h1 style=\"text-align: center;\">Welcome to ASC360</h1>\n<h3 style=\"text-align: center;>Important ADVENTURE SAFETY Information</h3>\n<div style=\"width:60%; \">\n    <p style=\"line-height:30px;\"><b>Hi {{doc.name_of_customer}}</b></p>\n    <p >Namaste from ASC360 team! Through {{doc.operator}}, you have elected to opt for the India\u2019s premier adventure safety, medical and travel safety services. \nWe are excited for your trek in the India. But first, please make note of these important details about your coverage.\nWe've attached all of your important documents in this email.</p><p></p>\n    <p style=\"line-height:30px;\">Please double check all your travel details. If something is not quite right, kindly let us know.</p>\n    <p style=\"line-height:30px;\">Have an amazing adventure!.</p>\n    <p style=\"line-height:30px;\">Below are your plan details.</p>\n    <br>\n    <h2 style=\"text-align: center;\"> Your Adventure Insurance Policy Details</h2>\n<table style=\"table-layout: fixed; width: 80%;\">\n    <tr>\n        <td>Tour Operator</td>\n        <td>Policy Number</td>\n    </tr>\n<tr>\n    <td>{{doc.operator}}</td>\n    <td><b>{{doc.name}}</b></td>\n</tr>\n<tr>\n    <td>Type of Plan</td>\n    <td>Start Date</td>\n</tr>\n<tr>\n    <td>Individual</td>\n    <td>{{frappe.utils.get_datetime(doc.start_date).strftime(\"%d-%m-%Y\")}}</td>\n</tr>\n<tr>\n    <td>Service</td>\n    <td>End Date</td>\n</tr>\n<tr>\n    <td>Adventure Insurance, Medical Evacuation</td>\n    <td>{{frappe.utils.get_datetime(doc.end_date).strftime(\"%d-%m-%Y\")}}</td>\n</tr>\n<tr>\n    <td>Term</td>\n    <td>Amount Charged</td>\n</tr>\n<tr>\n    <td>{{doc.period_of_issuance}} Days</td>\n    <td>Rs. {{doc.amount}}/-</td>\n</tr>\n<tr></tr>\n</table>\n<br>\n<center style=\"width:100%;min-width:380px\"> \n<!--<table>\t-->\n<!--<tr style=\"border: 5px solid black;\">-->\n<!--    <td width=\"50%\"><b>Benefits</b></td>-->\n<!--    <td width=\"50%\"><b>Sum Insured</b></td>-->\n<!--</tr>-->\n<!-- <br>-->\n<!-- <img src=\"https://asc360-prod.frappe.cloud/files/Screenshot%20from%202022-07-08%2017-02-53.png\" style=\"width:60%\">-->\n<!-- <br>-->\n\n<!--<div style=\"height:20px;width:20px;border:2px solid black\"></div>-->\n<!--{% set benefits= frappe.get_doc(\"Item\", doc.policy).benefit_details %}-->\n\n<!--{% for benefit in benefits %}-->\n<!--{% if index.value%2==0 %}-->\n<!--         <tr>-->\n<!--            <td width=\"50%\">{{benefit.benefit}}</td>-->\n<!--            <td width=\"50%\">{{benefit.amount}}</td>-->\n<!--            {% set index.value=index.value+1 %}-->\n<!--        </tr>-->\n<!--        {% else %}-->\n<!--         <tr>-->\n<!--            <td width=\"50%\">{{benefit.benefit}}</td>-->\n<!--            <td width=\"50%\">{{benefit.amount}}</td>-->\n<!--            {% set index.value=index.value+1 %}-->\n<!--        </tr>-->\n<!--        {% endif %}-->\n<!--{% endfor %}-->\n<!--</table>\t-->\n</center>\n<br>\n\n<p style=\"line-height: 2px;\">This plan is valid for single trekking.</p>\n<p style=\"line-height: 2px;\">Any claim due to or arising out of pre-existing diseases/ailments whether declared or undeclared is NOT covered under the policy.</p>\n<p style=\"line-height: 2px;\">Claims Procedure: In the event of an accident, immediately contact the Help Line number stating the necessary details.</p>\n<p style=\"line-height: 2px;\">Claims Assistance & Evacuation assistance ASC360: +91-7303800101 or Email: info@asc360.com</p>\n<p style=\"line-height: 2px;\">Wishing you a safe and exciting adventure !</p>\n<p></p>\n<p>Thanks and regards</p>\n<p><b>Team ASC360</b></p>\n<p>www.asc360.com </p>\n<p>Making outdoors safe n secure!</p>\n\n</div>",
+ "modified": "2023-01-10 16:22:02.430563",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2B Policy Issue Customer Only",
+ "owner": "Administrator",
+ "print_format": "B2B Policy Issue",
+ "recipients": [
+  {
+   "receiver_by_document_field": "email_id"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "sender": "Adventure Sports Cover 360",
+ "sender_email": "clientservices@asc360.com",
+ "subject": "{{doc.name_of_customer}}, You are now covered for your adventure! "
+}

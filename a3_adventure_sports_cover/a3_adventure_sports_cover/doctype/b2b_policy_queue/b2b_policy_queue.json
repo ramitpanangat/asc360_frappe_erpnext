@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-10-13 16:27:55.506048",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "no_of_policies",
+  "column_break_2",
+  "last_updated_batch",
+  "column_break_4",
+  "index",
+  "section_break_4",
+  "customer_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_details",
+   "fieldtype": "Table",
+   "label": "Customer Details",
+   "options": "B2B Queue Table"
+  },
+  {
+   "fieldname": "no_of_policies",
+   "fieldtype": "Int",
+   "label": "Highest Index "
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_updated_batch",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Last Updated Batch"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "index",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Index"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-11-03 10:40:08.467225",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2B Policy Queue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

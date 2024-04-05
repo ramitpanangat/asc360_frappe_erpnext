@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-23 15:05:18.970403",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "policy_number",
+  "claim_request_for",
+  "column_break_4",
+  "particulars",
+  "section_break_8",
+  "images",
+  "section_break_10",
+  "send_copy_to_insurance_company"
+ ],
+ "fields": [
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Policy Number",
+   "options": "List of Policy"
+  },
+  {
+   "fieldname": "claim_request_for",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Claim Request for",
+   "options": "Policy Benefits"
+  },
+  {
+   "fieldname": "particulars",
+   "fieldtype": "Data",
+   "label": "Particulars"
+  },
+  {
+   "fieldname": "send_copy_to_insurance_company",
+   "fieldtype": "Select",
+   "label": "Send Copy to Insurance Company",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Table",
+   "label": "Images",
+   "options": "Launch Claim Images"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-23 15:42:29.097138",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Launch Claim",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

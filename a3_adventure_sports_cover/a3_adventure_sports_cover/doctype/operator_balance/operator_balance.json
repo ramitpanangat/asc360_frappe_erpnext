@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{operator}",
+ "creation": "2022-05-18 12:16:14.541666",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator",
+  "sales_invoice_no",
+  "invoice_amount",
+  "column_break_4",
+  "number_of_policy_issued",
+  "total_policy_amount",
+  "balance_available",
+  "section_break_8",
+  "invoices_issued"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "sales_invoice_no",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sales Invoice No.",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "invoice_amount",
+   "fieldtype": "Currency",
+   "label": "Advance Amount Paid"
+  },
+  {
+   "fieldname": "number_of_policy_issued",
+   "fieldtype": "Data",
+   "label": "Number of Policy Issued"
+  },
+  {
+   "fieldname": "total_policy_amount",
+   "fieldtype": "Currency",
+   "label": "Total Policy Amount"
+  },
+  {
+   "fieldname": "balance_available",
+   "fieldtype": "Currency",
+   "label": "Balance Available"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoices_issued",
+   "fieldtype": "Table",
+   "label": "Invoices Issued",
+   "options": "Operator Balance Table"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-30 15:59:20.250221",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Balance",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

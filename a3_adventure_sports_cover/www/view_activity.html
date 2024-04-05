@@ -1,0 +1,138 @@
+{% extends "www/base_template.html" %}
+
+{% block activeActivity %}active{% endblock activeActivity %}
+
+{% block title %}Activity | {{activity.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/activity_master">Activity</a> > {{ activity.name }}</h3>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="activity_name">Activity Name</label>
+                            <input type="text" name="activity_name" readonly disabled value="{{activity.activity_name}}">
+                            
+                            <label for="activity_territory">Activity Territory</label>
+                            <input type="text" name="activity_territory" readonly disabled value="{{activity.activity_territory}}">
+                            
+                            <label for="category">Category</label>
+                            <input type="text" name="category" readonly disabled value="{{activity.category}}">
+                            
+                            <label for="level">Level</label>
+                            <input type="text" name="level" readonly disabled value="{{activity.level}}">
+                            
+                            <label for="contact_activity">Contact Activity</label>
+                            <input type="text" name="contact_activity" readonly disabled value="{{activity.contact_activity}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="description">Description</label>
+                            <textarea type="text" name="description" readonly disabled rows="12">{{activity.description}}</textarea>
+                        </div>
+                    </div>
+                    <!-- <h3 class="section-title"><b>Policy Details</b></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Insurance Policy</th>
+                                        <th class="border-0">Premium Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if policies|length %}
+                                        {% for policy in policies %}
+                                                <tr>
+                                                    <td>{{policy.insurance_policy}}</td>
+                                                    <td>{{policy.premium_amount}}</td>
+                                                </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="2" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 class="section-title"><b>Equipment Details</b></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Equipment Name</th>
+                                        <th class="border-0">Equipment Type</th>
+                                        <th class="border-0">Minimum Capacity</th>
+                                        <th class="border-0">Maximum Capacity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if equipments|length>0 %}
+                                        {% for equipment in equipments %}
+                                                <tr>
+                                                    <td>{{equipment.equipment_name}}</td>
+                                                    <td>{{equipment.equipment_type}}</td>
+                                                    <td>{{equipment.min_capacity}}</td>
+                                                    <td>{{equipment.max_capacity}}</td>
+                                                </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="4" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 class="section-title"><b>Staff Details</b></h3> -->
+                    <!-- <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Staff ID</th>
+                                        <th class="border-0">Staff Name</th>
+                                        <th class="border-0">License Expiry Date</th>
+                                        <th class="border-0">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if staffs|length>0 %}
+                                        {% for staff in staffs %}
+                                                <tr>
+                                                    <td>{{staff.staff_id}}</td>
+                                                    <td>{{staff.staff_name}}</td>
+                                                    <td>{{staff.license_expiry_date.strftime("%d-%m-%Y")}}</td>
+                                                    {% if staff.status=="Active" %}<td style="color:green;">{{staff.status}}</td>{% else %}<td style="color:green;">{{staff.status}}</td>{% endif %}
+                                                </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="4" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-11-05 23:19:42.086504",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "highest_index",
+  "policy_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "highest_index",
+   "fieldtype": "Int",
+   "label": "Highest Index"
+  },
+  {
+   "fieldname": "policy_list",
+   "fieldtype": "Table",
+   "label": "Policy List",
+   "options": "B2B Cancel Queue Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-11-05 23:19:42.086504",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2B Cancellation Queue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

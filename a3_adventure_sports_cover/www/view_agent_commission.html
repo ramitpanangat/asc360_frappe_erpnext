@@ -1,0 +1,94 @@
+{% extends "www/base_template.html" %}
+
+{% block activeCommissionPaymentAG %}active{% endblock activeCommissionPaymentAG %}
+
+{% block title %}Commission Request | {{agent_commission.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/agent_commission_request_list">Commission Request</a> > {{ agent_commission.name }}</h3>
+                    </div>
+                    <h3 class="section-title"><strong>Baisc Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="posting_date">Posting Date</label>
+                            <input type="text" name="posting_date" readonly disabled value="{{agent_commission.posting_date}}">
+                            <label for="period_start_date">Period Start Date</label>
+                            <input type="text" name="period_start_date" readonly disabled value="{{agent_commission.period_start_date}}">
+                            <label for="total_commission">Total Commission</label>
+                            <input type="text" name="total_commission" readonly disabled value="{{agent_commission.total_commission}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="request_date">Request Date</label>
+                            <input type="text" name="request_date" readonly disabled value="{{agent_commission.request_date}}">
+                            <label for="period_end_date">Period End Date</label>
+                            <input type="text" name="period_end_date" readonly disabled value="{{agent_commission.period_end_date}}">
+                        </div>
+                    </div>
+
+                    <h3 class="section-title"><strong>Commission Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Commission Payable Number</th>
+                                        <th class="border-0">Commission</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if agent_commission_payable|length>0 %}
+                                    {% for agent_commission in agent_commission_payable %}
+											
+                                            <tr>
+                                                <td>{{agent_commission.agent_commission_payable}}</td>
+                                                <td>{{agent_commission.commission}}</td>
+                                            </tr>
+											
+									{% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="2" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 class="section-title"><strong>Payment Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="mode_of_payment">Mode of Payment</label>
+                            <input type="text" name="mode_of_payment" readonly disabled value="{{agent_commission.mode_of_payment}}">
+                            <label for="reference_no">Cheque/Reference No</label>
+                            <input type="text" name="reference_no" readonly disabled value="{{agent_commission.reference_no}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="paid_amount">Paid Amount</label>
+                            <input type="text" name="paid_amount" readonly disabled value="{{agent_commission.paid_amount}}">
+                            <label for="reference_date">Cheque/Reference Date</label>
+                            <input type="text" name="reference_date" readonly disabled value="{{agent_commission.reference_date}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-03-15 17:59:30.591576",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "select_user_type",
+  "policy_name",
+  "policy_price",
+  "commission",
+  "commission_amount",
+  "commission_report",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "select_user_type",
+   "fieldtype": "Select",
+   "label": "Select User Type",
+   "options": "Union\nOperator"
+  },
+  {
+   "fieldname": "policy_price",
+   "fieldtype": "Data",
+   "label": "Policy Price"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Float",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "commission_amount",
+   "fieldtype": "Data",
+   "label": "Commission Amount"
+  },
+  {
+   "fieldname": "commission_report",
+   "fieldtype": "Data",
+   "label": "Commission Report"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Commission Structure",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Link",
+   "label": "Policy Name",
+   "options": "Policy Master"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-03-16 10:24:29.653502",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Commission Structure",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

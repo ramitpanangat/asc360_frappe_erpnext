@@ -1,0 +1,27 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2022-08-22 18:19:35.018468",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "modified": "2022-08-22 18:19:35.018468",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "EVAC Expense Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "EVAC Payment",
+ "report_name": "EVAC Expense Report",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

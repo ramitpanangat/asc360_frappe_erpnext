@@ -1,0 +1,285 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Booking-{booking_date}-{####}",
+ "creation": "2022-03-15 16:29:00.174425",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator",
+  "product_details_section",
+  "operator_product",
+  "booking_date",
+  "time_of_day_of_activity",
+  "doctor_or_medical_practitioner_on_site",
+  "manager_or_trainer_to_group_members_ratio",
+  "column_break_6",
+  "activity_date",
+  "nature_of_activity",
+  "any_previous_insurance_ever_been_declined",
+  "passenger_details_section",
+  "booking_passengers",
+  "equipment_details_section",
+  "booking_equipments",
+  "guide_or_instructor_details_section",
+  "booking_staff",
+  "transportation_details_section",
+  "transportation_type",
+  "column_break_19",
+  "specifications",
+  "accomodation_details_section",
+  "accomodation_type",
+  "contact_number",
+  "column_break_24",
+  "accomodation_name",
+  "address",
+  "meal_details_section",
+  "meals",
+  "commission_details_section",
+  "total_amount",
+  "column_break_31",
+  "view_commission",
+  "commission_generated",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_details_section",
+   "fieldtype": "Section Break",
+   "label": "Product Details"
+  },
+  {
+   "fieldname": "operator_product",
+   "fieldtype": "Link",
+   "label": "Operator Product",
+   "options": "Operator Product"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Booking",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Booking Date"
+  },
+  {
+   "default": "Day",
+   "fieldname": "time_of_day_of_activity",
+   "fieldtype": "Select",
+   "label": "Time of Day of Activity",
+   "options": "\nDay\nNight"
+  },
+  {
+   "default": "Yes",
+   "fieldname": "doctor_or_medical_practitioner_on_site",
+   "fieldtype": "Select",
+   "label": "Doctor or Medical Practitioner on Site",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "activity_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Activity Date"
+  },
+  {
+   "fieldname": "nature_of_activity",
+   "fieldtype": "Select",
+   "label": "Nature of Activity",
+   "options": "Exploratory\nDefined Route/Location"
+  },
+  {
+   "description": "In respect of any of the persons proposed to be insured\n Has any application for life, health, hospital daily cash or critical illness insurance ever been declined, postponed, loaded or been made subject to any special conditions by any insurance company",
+   "fieldname": "any_previous_insurance_ever_been_declined",
+   "fieldtype": "Select",
+   "label": "Any previous Insurance ever been Declined",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "manager_or_trainer_to_group_members_ratio",
+   "fieldtype": "Select",
+   "label": "Manager or Trainer to Group Members Ratio",
+   "options": "01:01\n01:>10\n01:10"
+  },
+  {
+   "fieldname": "equipment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment Details"
+  },
+  {
+   "fieldname": "booking_equipments",
+   "fieldtype": "Table",
+   "label": "Booking Equipments",
+   "options": "Booking Equipment"
+  },
+  {
+   "fieldname": "guide_or_instructor_details_section",
+   "fieldtype": "Section Break",
+   "label": "Guide or Instructor Details"
+  },
+  {
+   "fieldname": "booking_staff",
+   "fieldtype": "Table",
+   "label": "Booking Staff",
+   "options": "Booking Staff"
+  },
+  {
+   "fieldname": "passenger_details_section",
+   "fieldtype": "Section Break",
+   "label": "Passenger Details"
+  },
+  {
+   "fieldname": "booking_passengers",
+   "fieldtype": "Table",
+   "label": "Booking Passengers",
+   "options": "Booking Passenger"
+  },
+  {
+   "fieldname": "transportation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Transportation Details"
+  },
+  {
+   "fetch_from": "operator_product.transportation_type",
+   "fieldname": "transportation_type",
+   "fieldtype": "Select",
+   "label": "Transportation Type",
+   "options": "Taxi\nBus\nTrain\nAircraft\nHelicopter"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "operator_product.specification",
+   "fieldname": "specifications",
+   "fieldtype": "Small Text",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "accomodation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Accomodation Details"
+  },
+  {
+   "fetch_from": "operator_product.accomodation_type",
+   "fieldname": "accomodation_type",
+   "fieldtype": "Select",
+   "label": "Accomodation Type",
+   "options": "Hotel\nResort\nLodge\nHome stay\nHostel"
+  },
+  {
+   "description": "Name of Hotel/Resort/Lodge/Homestay",
+   "fetch_from": "operator_product.accomodation_name",
+   "fieldname": "accomodation_name",
+   "fieldtype": "Data",
+   "label": "Accomodation Name"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "operator_product.contact",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fetch_from": "operator_product.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "meal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Meal Details"
+  },
+  {
+   "fieldname": "meals",
+   "fieldtype": "Table",
+   "label": "Meals",
+   "options": "Booking Meal"
+  },
+  {
+   "fieldname": "commission_details_section",
+   "fieldtype": "Section Break",
+   "label": "Commission Details"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: doc.view_commission == \"1\"",
+   "fieldname": "commission_generated",
+   "fieldtype": "Currency",
+   "label": "Commission Generated",
+   "read_only": 1
+  },
+  {
+   "default": "user",
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "default": "0",
+   "fieldname": "view_commission",
+   "fieldtype": "Check",
+   "label": "View Commission"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-03-24 18:41:09.435403",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Booking",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

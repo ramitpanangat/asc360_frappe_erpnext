@@ -1,0 +1,86 @@
+{% extends "www/base_template.html" %}
+
+{% block activeClaims %}active{% endblock activeClaims %}
+
+{% block title %}Claims{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+<!-- <script type="text/application" src="apps/a3_adventure_sports_cover/a3_adventure_sports_cover/www/issued_ticket.js"></script> -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Claims</h3>
+                        <a href="/create_claims" class="create-button">New Claim</a>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <form action="/claim_intimation" method="post">
+                                <!-- Filter By Product Name -->
+                                {% if params.name=="" or params.name==None %}
+                                    <input type="text" name="name" list="name" autocomplete="off" placeholder="Claim ID">
+                                {% else %}
+                                    <input type="text" name="name" list="name" autocomplete="off" value="{{params.name}}">
+                                {% endif %}
+                                <datalist id="name">
+                                   {% for claim in claims %}  
+                                       <option value="{{ claim.name }}">{{ claim.name }}</option>
+                                   {% endfor %}
+                                </datalist>
+                                
+                                
+                               <input type="submit" value="Filter">                           
+                           </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Claim ID</th>
+                                        <th class="border-0">Date of Intimation</th>
+                                        <th class="border-0">Intimation By</th>
+                                        <th class="border-0">Name of Caller</th>
+                                        <th class="border-0">Caller Contact No.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if claims|length>0 %}
+                                        {% for claim in claims %}
+                                            <tr>
+                                                <td><a href="/view_claims/{{claim.name}}" class="item-view">{{claim.name}}</a></td>
+                                                <td>{{claim.date_of_intimation}}</td>
+                                                <td>{{claim.intimation_by}}</td>
+                                                <td>{{claim.name_of_caller}}</td>
+                                                <td>{{claim.caller_contact_no}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

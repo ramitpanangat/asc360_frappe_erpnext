@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Level {level_number}",
+ "creation": "2022-07-15 11:44:09.799522",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "level_number",
+  "level_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "level_number",
+   "fieldtype": "Data",
+   "label": "Level Number"
+  },
+  {
+   "fieldname": "level_name",
+   "fieldtype": "Data",
+   "label": "Level Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-07-15 11:44:19.344343",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Activity Levels",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

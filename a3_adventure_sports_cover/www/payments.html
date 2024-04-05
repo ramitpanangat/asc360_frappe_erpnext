@@ -1,0 +1,108 @@
+{% extends "www/base_template.html" %}
+
+{% if user_type=="Agent Customer" %}
+    {% block activePaymentAG %}active{% endblock activePaymentAG %}
+{% else %}
+    {% block activePayment %}active{% endblock activePayment %}
+{% endif %}
+
+{% block title %}Payments{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Payments</h3>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <!-- Filter Section -->
+                            <form action="/payments" method="post">
+                                <!-- Filter by Customer -->
+                                {% if params.payment_type==None or params.payment_type=="" %}
+                                    <input type="text" list="payment_type" name="payment_type"  autocomplete="off" placeholder="Payment Type">
+                                {% else %}
+                                    <input type="text" list="payment_type" name="payment_type"  autocomplete="off" value="{{params.payment_type}}">
+                                {% endif %}
+                                <datalist id="payment_type">
+                                    <option value="Receive">Receive</option>
+                                    <option value="Pay">Pay</option>
+                                </datalist>
+                                
+                                <!-- Filter for Mode of Payment -->
+                                {% if params.mode_of_payment==None or params.mode_of_payment=="" %}
+                                <input type="text" list="mode_of_payment" name="mode_of_payment"  autocomplete="off" placeholder="Mode of Payment">
+                                {% else %}
+                                <input type="text" list="mode_of_payment" name="mode_of_payment"  autocomplete="off" value="{{params.mode_of_payment}}">
+                                {% endif %}
+                                 <datalist id="mode_of_payment">
+                                    {% for mod in mode_of_payment %}
+                                        <option value="{{mod}}">{{mod}}</option>
+                                    {% endfor %}
+                                 </datalist>
+
+                                <!-- Filter for Posting Date -->
+                                {% if params.posting_date=="" %}
+                                    <input type="date" name="posting_date" id="posting_date" placeholder="Posting Date">
+                                {% else %}
+                                    <input type="date" name="posting_date" id="posting_date" placeholder="Posting Date" value="{{params.posting_date}}">
+                                {% endif %}
+                                 
+                                 <input type="submit" value="Filter">
+                            </form>
+                           
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Payment ID</th>
+                                        <th class="border-0">Customer</th>
+                                        <th class="border-0">Payment Type</th>
+                                        <th class="border-0">Mode of Payment</th>
+                                        <th class="border-0">Invoice Amount</th>
+                                        <th class="border-0">Payment Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if payments|length > 0 %}
+                                        {% for pay in payments %}
+                                            
+                                                    <tr>
+                                                        <td><a href="view_payment/{{pay.name}}" class="item-view">{{pay.name}}</a></td>
+                                                        <td>{{pay.party}}</td>
+                                                        <td>{{pay.payment_type}}</td>
+                                                        <td>{{pay.mode_of_payment}}</td>
+                                                        <td>{{pay.paid_amount}}</td>
+                                                        <td>{{pay.posting_date.strftime("%d-%m-%Y")}}</td>
+                                                    </tr>
+                                            
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="6" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

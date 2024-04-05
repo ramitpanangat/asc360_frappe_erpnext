@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 16:57:49.930046",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_number",
+  "policy_holder",
+  "column_break_3",
+  "location",
+  "policy_number",
+  "section_break_6",
+  "on_call_doctors"
+ ],
+ "fields": [
+  {
+   "fieldname": "incident_number",
+   "fieldtype": "Link",
+   "label": "Incident Number",
+   "options": "Incident Report"
+  },
+  {
+   "fieldname": "policy_holder",
+   "fieldtype": "Link",
+   "label": "Policy Holder",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "label": "Policy Number",
+   "options": "List of Policy"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "on_call_doctors",
+   "fieldtype": "Table",
+   "label": "On Call Doctors",
+   "options": "On Call Doctor Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-23 13:20:10.987153",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "On Call Doctor",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,385 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:policy_number",
+ "creation": "2022-06-28 19:32:20.508483",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date_of_issuance",
+  "policy_details_section",
+  "start_date",
+  "policy_name",
+  "policy_number",
+  "start_location",
+  "amount",
+  "column_break_20",
+  "end_date",
+  "policy",
+  "end_location",
+  "period_of_issuance",
+  "customer_details_section",
+  "customer_name",
+  "gender",
+  "email_id",
+  "aadhar_number",
+  "column_break_7",
+  "date_of_birth",
+  "nationality",
+  "phone_number",
+  "pan_number",
+  "passport_number",
+  "customer_bulk",
+  "address_section",
+  "address_line_1",
+  "citytown",
+  "country",
+  "column_break_17",
+  "address_line_2",
+  "state_ut",
+  "pin_code",
+  "section_break_21",
+  "nominee_name",
+  "nominee_relationship",
+  "column_break_24",
+  "nominee_contact",
+  "policy_generated_details",
+  "policy_status",
+  "policy_generated_list",
+  "amended_from",
+  "endorsement_details_section",
+  "endorse",
+  "original_policy",
+  "column_break_40",
+  "endorsement",
+  "endorsement_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "PAN Number"
+  },
+  {
+   "fieldname": "aadhar_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Aadhar Number"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Passport Number"
+  },
+  {
+   "fieldname": "policy_details_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Details"
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Plan Name",
+   "options": "Item"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "period_of_issuance",
+   "fieldtype": "Data",
+   "label": "Period of Issuance"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Policy Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nominee_name",
+   "fieldtype": "Data",
+   "label": "Nominee Name"
+  },
+  {
+   "fieldname": "nominee_relationship",
+   "fieldtype": "Data",
+   "label": "Nominee Relationship"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nominee_contact",
+   "fieldtype": "Data",
+   "label": "Nominee Contact"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "B2C Policy Issue",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_issuance",
+   "fieldtype": "Date",
+   "label": "Date of Issuance"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "citytown",
+   "fieldtype": "Data",
+   "label": "City/Town"
+  },
+  {
+   "fieldname": "state_ut",
+   "fieldtype": "Data",
+   "label": "State/Union Territory"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "pin_code",
+   "fieldtype": "Data",
+   "label": "Pin Code"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_location",
+   "fieldtype": "Link",
+   "label": "Start Location",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "end_location",
+   "fieldtype": "Link",
+   "label": "End Location",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Link",
+   "label": "Policy Name",
+   "options": "Customised Policy"
+  },
+  {
+   "fieldname": "endorsement_details_section",
+   "fieldtype": "Section Break",
+   "label": "Endorsement Details"
+  },
+  {
+   "fieldname": "column_break_40",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "endorsement",
+   "fieldtype": "Link",
+   "label": "Endorsement",
+   "options": "B2C Endorsement"
+  },
+  {
+   "default": "0",
+   "fieldname": "endorse",
+   "fieldtype": "Check",
+   "label": "Endorse"
+  },
+  {
+   "fieldname": "original_policy",
+   "fieldtype": "Link",
+   "label": "Original Policy",
+   "options": "B2C Policy Issue"
+  },
+  {
+   "fieldname": "endorsement_count",
+   "fieldtype": "Data",
+   "label": "Endorsement Count"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "customer_bulk",
+   "fieldtype": "Table",
+   "label": "Customer Details",
+   "options": "B2C Customer Table"
+  },
+  {
+   "fieldname": "policy_generated_details",
+   "fieldtype": "Section Break",
+   "label": "Policy Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "In Process",
+   "fieldname": "policy_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Policy Status",
+   "options": "In Process\nCompleted"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.policy_type == \"Bulk Policy\"",
+   "fieldname": "policy_generated_list",
+   "fieldtype": "Table",
+   "label": "Policy Generated List",
+   "options": "B2C Generated Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "B2C Endorsement",
+   "link_fieldname": "b2b_policy"
+  }
+ ],
+ "modified": "2022-11-24 16:36:05.235290",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2C Policy Issue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Policy Issuer",
+   "select": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ASC Admin",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

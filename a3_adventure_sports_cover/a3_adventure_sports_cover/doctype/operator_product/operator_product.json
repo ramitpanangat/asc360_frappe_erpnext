@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2022-03-15 16:11:38.465351",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator",
+  "section_break_2",
+  "package_type",
+  "column_break_4",
+  "package_category",
+  "activity_details_section",
+  "activity_table",
+  "section_break_8",
+  "transportation_type",
+  "column_break_10",
+  "specification",
+  "accomodation_details_section",
+  "accomodation_type",
+  "contact",
+  "column_break_15",
+  "accomodation_name",
+  "address",
+  "meal_details_section",
+  "meal",
+  "section_break_20",
+  "net_total"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "package_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Package Type",
+   "options": "Standalone  Activity\nPackage",
+   "reqd": 1
+  },
+  {
+   "fieldname": "package_category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Package Category",
+   "options": "One-day Activity Package\nTour Package"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "activity_details_section",
+   "fieldtype": "Section Break",
+   "label": "Activity Details"
+  },
+  {
+   "fieldname": "activity_table",
+   "fieldtype": "Table",
+   "label": "Activity Table",
+   "options": "Operator Product Activity"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Transportation Details"
+  },
+  {
+   "fieldname": "net_total",
+   "fieldtype": "Currency",
+   "label": "Net Total"
+  },
+  {
+   "fieldname": "transportation_type",
+   "fieldtype": "Select",
+   "label": "Transportation Type",
+   "options": "Taxi\nBus\nTrain\nAircraft\nHelicopter"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "specification",
+   "fieldtype": "Small Text",
+   "label": "Specification"
+  },
+  {
+   "fieldname": "accomodation_details_section",
+   "fieldtype": "Section Break",
+   "label": "Accomodation Details"
+  },
+  {
+   "fieldname": "accomodation_type",
+   "fieldtype": "Select",
+   "label": "Accomodation Type",
+   "options": "Hotel\nResort\nLodge\nHomestay\nHostel"
+  },
+  {
+   "description": "Name of Hotel/Resort/Lodge Etc.",
+   "fieldname": "accomodation_name",
+   "fieldtype": "Data",
+   "label": "Accomodation Name"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "meal_details_section",
+   "fieldtype": "Section Break",
+   "label": "Meal Details"
+  },
+  {
+   "fieldname": "meal",
+   "fieldtype": "Table",
+   "label": "Meal",
+   "options": "Operator Product Meal"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-03-17 11:44:45.579282",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Product",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

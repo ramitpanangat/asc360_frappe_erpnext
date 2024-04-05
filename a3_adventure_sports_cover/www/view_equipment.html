@@ -1,0 +1,133 @@
+{% extends "www/base_template.html" %}
+
+{% block activeEquipment %}active{% endblock activeEquipment %}
+
+{% block title %}Equipment | {{equipment.equipment_name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/equipment_master">Equipment</a> > {{ equipment.equipment_name }}</h3>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="equipment_name">Equipment Name</label>
+                            <input type="text" name="equipment_name" readonly disabled value="{{equipment.equipment_name}}">
+                            
+                            <label for="equipment_type">Equipment Type</label>
+                            <input type="text" name="equipment_type" readonly disabled value="{{equipment.equipment_type}}">
+                            
+                            <label for="maximum_capacity">Maximum Capacity</label>
+                            <input type="text" name="maximum_capacity" readonly disabled value="{{equipment.maximum_capacity}}">
+                            
+                            <label for="minimum_capacity">Miniimum Capacity</label>
+                            <input type="text" name="minimum_capacity" readonly disabled value="{{equipment.minimum_capacity}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="hours_clocked">Hours Clocked</label>
+                            <input type="text" name="hours_clocked" readonly disabled value="{{equipment.hours_clocked}}">
+                            
+                            <label for="equipment_code">Equipment Code</label>
+                            <input type="text" name="equipment_code" readonly disabled value="{{equipment.equipment_code}}">
+                            
+                            <label for="model_no">Model No</label>
+                            <input type="text" name="model_no" readonly disabled value="{{equipment.model_no}}">
+                        </div>
+                    </div>
+                    <h3 class="section-title"><strong>Registration Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="registration_authority">Registration Authority</label>
+                            <input type="text" name="registration_authority" readonly disabled value="{{equipment.registration_authority}}">
+                            
+                            <label for="registration_date">Registration Date</label>
+                            <input type="text" name="registration_date" readonly disabled value="{{equipment.registration_date.strftime('%d-%m-%Y')}}">
+                            
+                            <label for="maximum_capacity">Registration Number</label>
+                            <input type="text" name="registration_number" readonly disabled value="{{equipment.registration_number}}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="registration_valid_from">Registration Valid From</label>
+                            <input type="text" name="registration_valid_from" readonly disabled value="{{equipment.registration_valid_from}}">
+                            
+                            <label for="registration_valid_to">Registration Valid To</label>
+                            <input type="text" name="registration_valid_to" readonly disabled value="{{equipment.registration_valid_to}}">
+                        </div>
+                    </div>
+                    
+                    <h3 class="section-title"><strong>Certificate Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Certificate Name</th>
+                                        <th class="border-0">Certificate Issuing Authority</th>
+                                        <th class="border-0">Valid From</th>
+                                        <th class="border-0">Valid To</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for equipment_certificate in equipment_certificates %}
+											
+                                            <tr>
+                                                <td>{{equipment_certificate.certificate_name}}</td>
+                                                <td>{{equipment_certificate.certificate_issuing_authority}}</td>
+                                                <td>{{equipment_certificate.valid_from.strftime("%d-%m-%Y")}}</td>
+                                                <td>{{equipment_certificate.valid_to.strftime("%d-%m-%Y")}}</td>
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <h3 class="section-title"><strong>Staff Details</strong></h3>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Staff Name</th>
+                                        <th class="border-0">Activity Name</th>
+                                        <th class="border-0">License Expiry Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for staff in staffs %}
+											
+                                            <tr>
+                                                <td>{{staff.staff_name}}</td>
+                                                <td>{{staff.activity_name}}</td>
+                                                <td>{{staff.license_expiry_date.strftime("%d-%m-%Y")}}</td>
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

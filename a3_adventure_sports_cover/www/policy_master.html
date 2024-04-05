@@ -1,0 +1,103 @@
+{% extends "www/base_template.html" %}
+
+{% block activePlanMaster %}active{% endblock activePlanMaster %}
+
+{% block title %}Policy Master{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Plan Master</h3>
+                        <!-- <a href="http://sports.asc:8014/create_plan_master" class="create-button">Create Plan Master</a> -->
+                    </div>
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <!-- Filter Section -->
+                           <form action="/policy_master" method="get">
+                               <!-- Filter by Policy Number -->
+                                {% if params.name==None or params.name=="" %}
+                                    <input type="text" name="name" list="name" autocomplete="off" placeholder="Plan Name">
+                                {% else %}
+                                    <input type="text" name="name" list="name" autocomplete="off" value="{{params.name}}">
+                                {% endif %}
+                                <datalist id="name">
+                                    {% for policy in plan_master %}
+                                        <option value="{{policy.name}}">{{policy.name}}</option>
+                                    {% endfor %}
+                                </datalist>
+
+                                <!-- Filter by Customer -->
+                                <select id="scope_of_policy" name="scope_of_policy">
+                                    {% for scope in scope_of_policy %}
+                                    {% if params.scope_of_policy==scope %}
+                                        <option value="{{scope}}" selected>{{scope}}</option>
+                                    {% else %}
+                                        <option value="{{scope}}">{{scope}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                                <input type="submit" value="Filter">
+                           </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Customised Policy</th>
+                                        <th class="border-0">Scope of Policy</th>
+                                        <th class="border-0">Type of Policy</th>
+                                        <th class="border-0">Policy End Date</th>
+                                        <th class="border-0">Status</th>
+                                        <th class="border-0">Created On</th>
+                                        <th class="border-0">Created By</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if plan_master|length>0 %}
+                                        {% for policy in plan_master %}
+                                            <tr>
+                                                <td> <a href="/view_plan_master/{{policy.name}}" class="item-view">{{policy.name}}</a></td>
+                                                <td>{{policy.scope_of_policy}}</td>
+                                                <td>{{policy.type_of_policy}}</td>
+                                                <td>{% if policy.plan_end_date %}{{policy.plan_end_date.strftime('%d-%m-%Y')}}{% else %}N/A{% endif %}</td>
+                                                {% if policy.status=="Active" %}
+                                                    <td class="activeStatus">{{policy.status}}</td>
+                                                {% else %}
+                                                    <td class="inactiveStatus">{{policy.status}}</td>
+                                                {% endif %}
+                                                <td>{{policy.creation.strftime("%d-%m-%Y")}}</td>
+                                                <td>{% if policy.owner==username %}{{policy.owner}}{% else %}ASC Admin{% endif %}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

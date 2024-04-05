@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 21:03:32.964810",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_number",
+  "policy_number",
+  "evacuation_incharge",
+  "caller_name",
+  "relation_to_claimaint",
+  "location",
+  "evacuation_type",
+  "condition_of_patient",
+  "column_break_9",
+  "hamrc_id",
+  "policy_holder_name",
+  "doctor_attended",
+  "caller_contact",
+  "supplier_policy_number",
+  "hospital",
+  "evacuation_priority",
+  "doctor_remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "incident_number",
+   "fieldtype": "Link",
+   "label": "Incident Number",
+   "options": "Incident Report"
+  },
+  {
+   "fieldname": "policy_holder_name",
+   "fieldtype": "Data",
+   "label": "Policy Holder Name"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "label": "Policy Number",
+   "options": "Operator Policy Issued"
+  },
+  {
+   "fieldname": "hamrc_id",
+   "fieldtype": "Data",
+   "label": "HAMRC ID"
+  },
+  {
+   "fieldname": "caller_name",
+   "fieldtype": "Data",
+   "label": "Caller Name"
+  },
+  {
+   "fieldname": "caller_contact",
+   "fieldtype": "Data",
+   "label": "Caller Contact"
+  },
+  {
+   "fieldname": "relation_to_claimaint",
+   "fieldtype": "Data",
+   "label": "Relation to Claimaint"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "evacuation_incharge",
+   "fieldtype": "Data",
+   "label": "Evacuation Incharge"
+  },
+  {
+   "fieldname": "doctor_attended",
+   "fieldtype": "Link",
+   "label": "Doctor Attended",
+   "options": "Doctor"
+  },
+  {
+   "fieldname": "supplier_policy_number",
+   "fieldtype": "Data",
+   "label": "Supplier Policy Number"
+  },
+  {
+   "fieldname": "evacuation_type",
+   "fieldtype": "Link",
+   "label": "Evacuation Type",
+   "options": "Evacuation Type"
+  },
+  {
+   "fieldname": "evacuation_priority",
+   "fieldtype": "Link",
+   "label": "Evacuation Priority",
+   "options": "Evacuation Priority"
+  },
+  {
+   "fieldname": "condition_of_patient",
+   "fieldtype": "Data",
+   "label": "Condition of Patient"
+  },
+  {
+   "fieldname": "hospital",
+   "fieldtype": "Link",
+   "label": "Hospital",
+   "options": "Hospital"
+  },
+  {
+   "fieldname": "doctor_remarks",
+   "fieldtype": "Small Text",
+   "label": "Doctor Remarks"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-25 19:22:32.068632",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Evacuation Summary",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

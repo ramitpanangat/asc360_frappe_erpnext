@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include a3_adventure_sports_cover *.css
+recursive-include a3_adventure_sports_cover *.csv
+recursive-include a3_adventure_sports_cover *.html
+recursive-include a3_adventure_sports_cover *.ico
+recursive-include a3_adventure_sports_cover *.js
+recursive-include a3_adventure_sports_cover *.json
+recursive-include a3_adventure_sports_cover *.md
+recursive-include a3_adventure_sports_cover *.png
+recursive-include a3_adventure_sports_cover *.py
+recursive-include a3_adventure_sports_cover *.svg
+recursive-include a3_adventure_sports_cover *.txt
+recursive-exclude a3_adventure_sports_cover *.pyc

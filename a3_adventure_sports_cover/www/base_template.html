@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="/css/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/css/morris-bundle/morris.css">
+    <link rel="stylesheet" href="/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/css/custom_style.css">
+    <title>{% block title %}{% endblock title %} | {% if user_type=="Agent Customer" %}Agent Portal{% else %}Operator Portal{% endif %}</title>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+	    <!-- ============================================================== -->
+	    <!-- navbar -->
+	    <!-- ============================================================== -->
+	    <div class="dashboard-header">
+	        <nav class="navbar navbar-expand-lg bg-white fixed-top">
+	            <a class="navbar-brand" href="index.html"><img src="/images/logo.jpg" alt="ASC360" width="40px" class="logo">Adventure Sports Cover 360</a>
+	            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	                <span class="navbar-toggler-icon"></span>
+	            </button>
+	            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+	                <ul class="navbar-nav ml-auto navbar-right-top">
+	                    <!-- <li class="nav-item">
+	                        <div id="custom-search" class="top-search-bar">
+	                            <input class="form-control" type="text" placeholder="Search..">
+	                        </div>
+	                    </li> -->
+	                    <!-- <li class="nav-item dropdown notification">
+	                        <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
+	                        <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+	                            <li>
+	                                <div class="notification-title"> Notification</div>
+	                                <div class="notification-list">
+	                                    <div class="list-group">
+	                                        <a href="#" class="list-group-item list-group-item-action active">
+	                                            <div class="notification-info">
+	                                                <div class="notification-list-user-img"><img src="theme_assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+	                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+	                                                    <div class="notification-date">2 min ago</div>
+	                                                </div>
+	                                            </div>
+	                                        </a>
+	                                        <a href="#" class="list-group-item list-group-item-action">
+	                                            <div class="notification-info">
+	                                                <div class="notification-list-user-img"><img src="theme_assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+	                                                <div class="notification-list-user-block"><span class="notification-list-user-name">John Abraham </span>is now following you
+	                                                    <div class="notification-date">2 days ago</div>
+	                                                </div>
+	                                            </div>
+	                                        </a>
+	                                        <a href="#" class="list-group-item list-group-item-action">
+	                                            <div class="notification-info">
+	                                                <div class="notification-list-user-img"><img src="theme_assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+	                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+	                                                    <div class="notification-date">2 min ago</div>
+	                                                </div>
+	                                            </div>
+	                                        </a>
+	                                        <a href="#" class="list-group-item list-group-item-action">
+	                                            <div class="notification-info">
+	                                                <div class="notification-list-user-img"><img src="theme_assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+	                                                <div class="notification-list-user-block"><span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+	                                                    <div class="notification-date">2 min ago</div>
+	                                                </div>
+	                                            </div>
+	                                        </a>
+	                                    </div>
+	                                </div>
+	                            </li>
+	                            <li>
+	                                <div class="list-footer"> <a href="#">View all notifications</a></div>
+	                            </li>
+	                        </ul>
+	                    </li> -->
+	                    <!-- <li class="nav-item dropdown connection">
+	                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+	                        <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+	                            <li class="connection-list">
+	                                <div class="row">
+	                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+	                                        <a href="#" class="connection-item"><img src="theme_assets/images/github.png" alt="" > <span>Github</span></a>
+	                                    </div>
+	                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+	                                        <a href="#" class="connection-item"><img src="theme_assets/images/dribbble.png" alt="" > <span>Dribbble</span></a>
+	                                    </div>
+	                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+	                                        <a href="#" class="connection-item"><img src="theme_assets/images/dropbox.png" alt="" > <span>Dropbox</span></a>
+	                                    </div>
+	                                </div>
+	                                <div class="row">
+	                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+	                                        <a href="#" class="connection-item"><img src="theme_assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
+	                                    </div>
+	                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+	                                        <a href="#" class="connection-item"><img src="theme_assets/images/mail_chimp.png" alt="" ><span>Mail chimp</span></a>
+	                                    </div>
+	                                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+	                                        <a href="#" class="connection-item"><img src="theme_assets/images/slack.png" alt="" > <span>Slack</span></a>
+	                                    </div>
+	                                </div>
+	                            </li>
+	                            <li>
+	                                <div class="conntection-footer"><a href="#">More</a></div>
+	                            </li>
+	                        </ul>
+	                    </li> -->
+	                    <li class="nav-item dropdown nav-user profile">
+	                        <a class="nav-link nav-user-img" href="/view_profile" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<img src="{% block proPic %}{% endblock proPic %}" alt="" class="user-avatar-md rounded-circle"></a>
+							<a class="logout" href="/?cmd=web_logout"><i class="fas fa-power-off mr-2"></i>Logout</a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </nav>
+	    </div>
+	    <!-- ============================================================== -->
+	    <!-- end navbar -->
+	    <!-- ============================================================== -->
+	    <!-- ============================================================== -->
+	    <!-- left sidebar -->
+	    <!-- ============================================================== -->
+	    <div class="nav-left-sidebar sidebar-dark">
+	        <div class="menu-list">
+	            <nav class="navbar navbar-expand-lg navbar-light">
+	                <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+	                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	                    <span class="navbar-toggler-icon"></span>
+	                </button> -->
+					{% if user_type=="Agent Customer" %}
+	                <div class="collapse navbar-collapse" id="navbarNav">
+	                    <ul class="navbar-nav flex-column">
+	                        
+	                         <li class="nav-item ">
+	                            <a class="nav-link {% block activeDashboardAG %}{% endblock activeDashboardAG %}" href="/dashboard"><i class="fa fa-fw"></i>Dashboard </span></a>	                        </li> 
+							 </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link {% block activeIssuePolicyAG %}{% endblock activeIssuePolicyAG %}" href="/issue_policy"><i class="fas fa-fw "></i>Issue Policy</a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link {% block activeOperatorAG %}{% endblock activeOperatorAG %}" href="/operator_list"><i class="fas fa-fw "></i>Operators</a>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeCommissionReportAG %}{% endblock activeCommissionReportAG %}" href="/commission_report"><i class="fab fa-fw "></i>Commission Report</a>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeCommissionPaymentAG %}{% endblock activeCommissionPaymentAG %}" href="/agent_commission_request_list"><i class="fab fa-fw "></i>Commission Payment</a>
+	                        </li>
+	                        <!-- <li class="nav-item ">
+	                            <a class="nav-link {% block activeSalesSummaryAG %}{% endblock activeSalesSummaryAG %}" href="/sales_summary"><i class="fab fa-fw "></i>Sales Summary</a>
+							</li> -->
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activePaymentAG %}{% endblock activePaymentAG %}" href="/payments"><i class="fab fa-fw "></i>Payments</a>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeInvoiceAG %}{% endblock activeInvoiceAG %}" href="/invoices_list"><i class="fab fa-fw "></i>Invoices</a>
+	                        </li>
+							
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeAllTrancationAG %}{% endblock activeAllTrancationAG %}" href="/all_trancations"><i class="fab fa-fw "></i>All Transactions</a>
+	                        </li>
+	                    </ul>
+	                </div>
+					{% else %}
+	                <div class="collapse navbar-collapse" id="navbarNav">
+	                    <ul class="navbar-nav flex-column">
+	                        
+	                         <li class="nav-item ">
+	                            <a class="nav-link {% block activeDashboard %}{% endblock activeDashboard %}" href="/dashboard"><i class="fa fa-fw"></i>Dashboard </span></a>	                        </li> 
+	                        <li class="nav-item">
+	                            <a class="nav-link {% block activePlanMaster %}{% endblock activePlanMaster %}" href="/policy_master"><i class="fa fa-fw "></i>Plan Master</a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link {% block activeIssuePolicy %}{% endblock activeIssuePolicy %}" href="/issue_policy"><i class="fas fa-fw "></i>Issue Policy</a>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeCommissionReport %}{% endblock activeCommissionReport %}" href="/commission_report"><i class="fab fa-fw "></i>Commission Report</a>
+	                        </li>
+							<li class="nav-item ">
+	                            <a class="nav-link {% block activeCommissionPayment %}{% endblock activeCommissionPayment %}" href="/operator_commission_request_list"><i class="fab fa-fw "></i>Commission Payment</a>
+	                        </li>
+							<li class="nav-item ">
+	                            <a class="nav-link {% block activeClaims %}{% endblock activeClaims %}" href="/claim_intimation"><i class="fab fa-fw "></i>Claims</a>
+	                        </li>
+	                        <!-- <li class="nav-item ">
+	                            <a class="nav-link {% block activeSalesSummary %}{% endblock activeSalesSummary %}" href="/sales_summary"><i class="fab fa-fw "></i>Sales Summary</a>
+							</li> -->
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activePayment %}{% endblock activePayment %}" href="/payments"><i class="fab fa-fw "></i>Payments</a>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeInvoice %}{% endblock activeInvoice %}" href="/invoices_list"><i class="fab fa-fw "></i>Invoices</a>
+	                        </li>
+							
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeAllTrancation %}{% endblock activeAllTrancation %}" href="/all_trancations"><i class="fab fa-fw "></i>All Transactions</a>
+	                        </li>
+	                        <!-- <li class="nav-item ">
+	                            <a class="nav-link {% block activeActivity %}{% endblock activeActivity %}" href="/activity_master"><i class="fab fa-fw "></i>Activity Master</a>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeEquipment %}{% endblock activeEquipment %}" href="/equipment_master"><i class="fab fa-fw "></i>Equipment Master</a>
+	                        </li> -->
+	                        <!-- <li class="nav-item ">
+	                            <a class="nav-link {% block activeTicketMaster %}{% endblock activeTicketMaster %}" href="/ticket_master"><i class="fab fa-fw "></i>Ticket Master</a>
+	                        </li> -->
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeIssuedTicket %}{% endblock activeIssuedTicket %}" href="/issued_ticket"><i class="fab fa-fw "></i>Issued Ticket</a>
+	                        </li>
+	                        <li class="nav-item ">
+	                            <a class="nav-link {% block activeSettings %}{% endblock activeSettings %}" href="/change_password"><i class="fab fa-fw "></i>Change Password</a>
+	                        </li>
+	                    </ul>
+	                </div>
+					{% endif %}
+	            </nav>
+	        </div>
+	    </div>
+	    <!-- ============================================================== -->
+	    <!-- end left sidebar -->
+	    <!-- ============================================================== -->
+	    <!-- ============================================================== -->
+	    <!-- wrapper  -->
+	    <!-- ============================================================== -->
+	   {% block content %}
+	   {% endblock content %}
+	                        <!-- ============================================================== -->
+	                        <!-- end wrapper  -->
+	                        <!-- ============================================================== -->
+							<!-- footer -->
+						<!-- ============================================================== -->
+						<!-- <div class="footer">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+									   Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+									</div>
+									<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+										<div class="text-md-right footer-links d-none d-sm-block">
+											<a href="javascript: void(0);">About</a>
+											<a href="javascript: void(0);">Support</a>
+											<a href="javascript: void(0);">Contact Us</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> -->
+						<!-- ============================================================== -->
+						<!-- end footer -->
+	                    <!-- ============================================================== -->
+	                    <!-- end main wrapper  -->
+	                    <!-- ============================================================== -->
+	                    <!-- Optional JavaScript -->
+	                    <!-- jquery 3.3.1 -->
+	                    <script src="theme_assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+	                    <!-- bootstap bundle js -->
+	                    <script src="js/bootstrap.bundle.js"></script>
+	                    <!-- slimscroll js -->
+	                    <script src="theme_assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+	                    <!-- main js -->
+	                    <script src="theme_assets/libs/js/main-js.js"></script>
+	                    <!-- morris-chart js -->
+	                    <script src="theme_assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+	                    <script src="theme_assets/vendor/charts/morris-bundle/morris.js"></script>
+	                    <script src="theme_assets/vendor/charts/morris-bundle/morrisjs.html"></script>
+	                    <!-- chart js -->
+	                    <script src="theme_assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+	                    <script src="theme_assets/vendor/charts/charts-bundle/chartjs.js"></script>
+	                    <!-- dashboard js -->
+	                    <script src="theme_assets/libs/js/dashboard-influencer.js"></script>
+						<script type="text/javascript" src="/js/page_reload.js"></script>
+						{% block script %}{% endblock script %}
+</body>
+ 
+</html>

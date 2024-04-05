@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-12-12 16:40:06.636911",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "api_url",
+  "api_key",
+  "sender_id",
+  "b2b_enable",
+  "b2c_enable"
+ ],
+ "fields": [
+  {
+   "fieldname": "api_url",
+   "fieldtype": "Data",
+   "label": "API URL"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key"
+  },
+  {
+   "fieldname": "sender_id",
+   "fieldtype": "Data",
+   "label": "Sender ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "b2b_enable",
+   "fieldtype": "Check",
+   "label": "Enable SMS notification for B2B Policy Issuance"
+  },
+  {
+   "default": "0",
+   "fieldname": "b2c_enable",
+   "fieldtype": "Check",
+   "label": "Enable SMS notification for B2C Policy Issuance"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-12-12 17:41:59.136811",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "SMS Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

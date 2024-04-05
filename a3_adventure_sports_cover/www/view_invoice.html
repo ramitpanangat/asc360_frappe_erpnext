@@ -1,0 +1,95 @@
+{% extends "www/base_template.html" %}
+
+{% block activeInvoice %}active{% endblock activeInvoice %}
+
+{% block title %}Invoice | {{ invoice.name }}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/invoices_list">Invoice</a> > {{ invoice.name }}</h3>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="customer">Customer</label>
+                            <input type="text" name="customer" readonly disabled value="{{invoice.customer}}">
+
+                            <label for="operator">Operator</label>
+                            <input type="text" name="operator" readonly disabled value="{{invoice.operator}}">
+                        </div>
+                        
+                        <div class="column-break">
+                            <label for="posting_time">Posting Time</label>
+                            <input type="text" name="posting_time" readonly disabled value="{{posting_time}}">
+                            
+                            <label for="due_date">Payment Due Date</label>
+                            <input type="text" name="due_date" readonly disabled value="{{invoice.due_date.strftime('%d-%m-%Y')}}">
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Item</th>
+                                        <th class="border-0">Quantity</th>
+                                        <th class="border-0">Rate</th>
+                                        <th class="border-0">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in items %}
+											
+                                            <tr>
+                                                <td>{{item.item_code}}</td>
+                                                <td>{{item.qty}}</td>
+                                                <td>{{item.rate}}</td>
+                                                <td>{{item.amount}}</td>
+                                            </tr>
+											
+									{% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="grand_total">Grand Total</label>
+                            <input type="text" name="grand_total" readonly disabled value="{{invoice.grand_total}}">
+
+                            <label for="total_advance">Total Advance</label>
+                            <input type="text" name="total_advance" readonly disabled value="{{invoice.total_advance}}">
+                        </div>
+                        
+                        <div class="column-break">
+                            <label for="in_words">In Words</label>
+                            <input type="text" name="in_words" readonly disabled value="{{invoice.in_words}}">
+                            
+                            <label for="outstanding_amount">Outstanding Amount</label>
+                            <input type="text" name="outstanding_amount" readonly disabled value="{{invoice.outstanding_amount}}">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

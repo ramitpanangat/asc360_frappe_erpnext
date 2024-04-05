@@ -1,0 +1,320 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-28 18:30:58.429628",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "policy_type",
+  "column_break_header",
+  "date_of_issue",
+  "operator",
+  "column_break_6",
+  "operator_batch_code",
+  "operator_email_preference",
+  "policy_number",
+  "policy",
+  "customer_details_section",
+  "customer_name",
+  "gender",
+  "email_id",
+  "address",
+  "aadhar_number",
+  "column_break_10",
+  "date_of_birth",
+  "nationality",
+  "phone_number",
+  "pan_number",
+  "passport_number",
+  "documents_section",
+  "customer_documents",
+  "nominee_details_section",
+  "nominee_name",
+  "nominee_contact_number",
+  "column_break_18",
+  "nominee_relationship",
+  "amended_from",
+  "section_break_27",
+  "bulk_upload",
+  "policy_generated_section",
+  "policy_list"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Policy Number"
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "label": "Plan Name",
+   "options": "Item"
+  },
+  {
+   "depends_on": "eval: doc.policy_type == \"Single Policy\"",
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "depends_on": "eval:doc.policy_type == \"Single Policy\";",
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "depends_on": "eval:doc.policy_type == \"Single Policy\";",
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "depends_on": "eval:doc.policy_type == \"Single Policy\";",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "depends_on": "eval:doc.policy_type == \"Single Policy\";",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "depends_on": "eval:doc.policy_type == \"Single Policy\";",
+   "fieldname": "aadhar_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Aadhar Number"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.policy_type == \"Single Policy\";",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "depends_on": "eval:doc.policy_type == \"Single Policy\";",
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "PAN Number"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Passport Number"
+  },
+  {
+   "depends_on": "eval: doc.type_of_policy == \"Single Policy\"",
+   "fieldname": "nominee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Nominee Details"
+  },
+  {
+   "fieldname": "nominee_name",
+   "fieldtype": "Data",
+   "label": "Nominee Name"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nominee_relationship",
+   "fieldtype": "Data",
+   "label": "Nominee Relationship"
+  },
+  {
+   "fieldname": "nominee_contact_number",
+   "fieldtype": "Data",
+   "label": "Nominee Contact Number"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "B2B Policy Issue",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "documents_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "depends_on": "eval: doc.policy_type == \"Single Policy\"",
+   "fieldname": "customer_documents",
+   "fieldtype": "Table",
+   "label": "Customer Documents",
+   "options": "B2B Document Table"
+  },
+  {
+   "depends_on": "eval: doc.type_of_policy == \"Bulk Policy\"",
+   "fieldname": "section_break_27",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "depends_on": "eval: doc.type_of_policy == \"Bulk Policy\"",
+   "fieldname": "bulk_upload",
+   "fieldtype": "Table",
+   "label": "Bulk Upload",
+   "options": "Bulk Policy Issue Table"
+  },
+  {
+   "depends_on": "eval: doc.type_of_policy = \"Bulk Policy\"",
+   "fieldname": "operator_batch_code",
+   "fieldtype": "Data",
+   "label": "Operator Batch Code"
+  },
+  {
+   "fieldname": "policy_type",
+   "fieldtype": "Select",
+   "label": "Policy Type",
+   "options": "Single Policy\nBulk Policy"
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "operator.email_preferences",
+   "fetch_if_empty": 1,
+   "fieldname": "operator_email_preference",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Operator Email Preference",
+   "options": "Send to Operator Only\nSend to Customer & Operator\nSend to Customer Only\nDon't send Email"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "policy_generated_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Generated"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "policy_list",
+   "fieldtype": "Table",
+   "label": "Policy List",
+   "options": "B2B Bulk Policy Table"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "B2B Endorsement",
+   "link_fieldname": "b2b_policy"
+  }
+ ],
+ "modified": "2022-12-19 12:40:27.491003",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2B Policy Issue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Policy Issuer",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "ASC Admin",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC"
+}

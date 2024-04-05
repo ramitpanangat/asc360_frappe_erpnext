@@ -1,0 +1,129 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Booking-{booking_date}-{####}",
+ "creation": "2022-06-01 12:46:14.924389",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "product_details_section",
+  "operator_product",
+  "booking_date",
+  "time_of_day_of_activity",
+  "doctor_or_medical_practitioner_on_site",
+  "manager_or_trainer_to_group_members_ratio",
+  "column_break_6",
+  "activity_date",
+  "nature_of_activity",
+  "any_previous_insurance_ever_been_declined",
+  "passenger_details_section",
+  "booking_passengers",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "product_details_section",
+   "fieldtype": "Section Break",
+   "label": "Product Details"
+  },
+  {
+   "fieldname": "operator_product",
+   "fieldtype": "Link",
+   "label": "Operator Product",
+   "options": "Operator Product"
+  },
+  {
+   "default": "Today",
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Booking Date"
+  },
+  {
+   "default": "Day",
+   "fieldname": "time_of_day_of_activity",
+   "fieldtype": "Select",
+   "label": "Time of Day of Activity",
+   "options": "\nDay\nNight"
+  },
+  {
+   "default": "Yes",
+   "fieldname": "doctor_or_medical_practitioner_on_site",
+   "fieldtype": "Select",
+   "label": "Doctor or Medical Practitioner on Site",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "manager_or_trainer_to_group_members_ratio",
+   "fieldtype": "Select",
+   "label": "Manager or Trainer to Group Members Ratio",
+   "options": "01:01\n01:>10\n01:10"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "activity_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Activity Date"
+  },
+  {
+   "fieldname": "nature_of_activity",
+   "fieldtype": "Select",
+   "label": "Nature of Activity",
+   "options": "Exploratory\nDefined Route/Location"
+  },
+  {
+   "description": "In respect of any of the persons proposed to be insured\n Has any application for life, health, hospital daily cash or critical illness insurance ever been declined, postponed, loaded or been made subject to any special conditions by any insurance company",
+   "fieldname": "any_previous_insurance_ever_been_declined",
+   "fieldtype": "Select",
+   "label": "Any previous Insurance ever been Declined",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "passenger_details_section",
+   "fieldtype": "Section Break",
+   "label": "Passenger Details"
+  },
+  {
+   "fieldname": "booking_passengers",
+   "fieldtype": "Table",
+   "label": "Booking Passengers",
+   "options": "Booking Passenger"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-02 16:29:07.719557",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Booking Web Form",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,110 @@
+{% extends "www/base_template.html" %}
+
+{% if user_type=="Agent Customer" %}
+{% block activeAllTrancationAG %}active{% endblock activeAllTrancationAG %}
+{% else %}
+{% block activeAllTrancation %}active{% endblock activeAllTrancation %}
+{% endif %}
+
+{% block title %}All Trancations{% endblock title %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">All Transactions</h3>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <!-- Filter Section -->
+                            <form action="all_trancations" method="post">
+                                
+                                <!-- Filter for Mode of Payment -->
+                                {% if params.mode_of_payment==None or params.mode_of_payment=="" %}
+                                <input type="text" list="mode_of_payment" name="mode_of_payment"  autocomplete="off" placeholder="Mode of Payment">
+                                {% else %}
+                                <input type="text" list="mode_of_payment" name="mode_of_payment"  autocomplete="off" value="{{params.mode_of_payment}}">
+                                {% endif %}
+                                 <datalist id="mode_of_payment">
+                                    {% for mod in mode_of_payment %}
+                                        <option value="{{mod}}">{{mod}}</option>
+                                    {% endfor %}
+                                 </datalist>
+
+                                <!-- Filter for Posting Date -->
+                                {% if params.posting_date=="" %}
+                                    <input type="date" name="posting_date" id="posting_date" placeholder="Posting Date">
+                                {% else %}
+                                    <input type="date" name="posting_date" id="posting_date" placeholder="Posting Date" value="{{params.posting_date}}">
+                                {% endif %}
+                                 
+                                 <input type="submit" value="Filter">
+                            </form>
+                           
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Payment ID</th>
+                                        <th class="border-0">Customer</th>
+                                        <th class="border-0">Mode of Payment</th>
+                                        <th class="border-0">Invoice Amount</th>
+                                        <th class="border-0">Payment Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if payments|length>0 %}
+                                        {% for pay in payments %}
+                                                <tr>
+                                                    <td><a href="view_payment/{{pay.name}}" class="item-view">{{pay.name}}</a></td>
+                                                    <td>{{pay.party}}</td>
+                                                    <td>{{pay.mode_of_payment}}</td>
+                                                    <td>{{pay.paid_amount}}</td>
+                                                    <td>{{pay.posting_date.strftime("%d-%m-%Y")}}</td>
+                                                </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                         <tr><td colspan="6" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-btn">
+                    {% if prev_page != 0 %}
+                    <form action="/all_trancations">
+                        <input type="hidden" value="{{prev_page}}" name="page">
+                        <input type="submit" value="Previous">
+                    </form>
+                    {% endif %}
+                    <form action="/all_trancations">
+                        <input type="hidden" value="{{next_page}}" name="page">
+                        <input type="submit" value="Next">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

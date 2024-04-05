@@ -1,0 +1,56 @@
+{% extends "www/base_template.html" %}
+
+{% block activeOperatorAG %}active{% endblock activeOperatorAG %}
+
+{% block title %}Operator | {{operators.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/operator_list">Operator</a> > {{ operators.name }}</h3>
+                    </div>
+                    <h3 class="section-title"><strong>Basic Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="operator_name">Operator Name</label>
+                            <input type="text" name="operator_name" readonly disabled value="{{operators.name}}">
+                            <label for="email">Operator Email</label>
+                            <input type="text" name="email" readonly disabled value="{{operators.email}}">
+                            <label for="website">Website</label>
+                            <input type="text" name="website" readonly disabled value="{{operators.website}}">
+                            <label for="registration_number">Registration Number</label>
+                            <input type="text" name="registration_number" readonly disabled value="{{operators.registration_number}}">
+                        </div>
+                        
+                        <div class="column-break">
+                            <label for="union">Union</label>
+                            <input type="text" name="union" readonly disabled value="{{operators.union}}">
+                            <label for="email_preferences">Email Preferences</label>
+                            <input type="text" name="email_preferences" readonly disabled value="{{operators.email_preferences}}">
+                            <label for="territory">Territory</label>
+                            <input type="text" name="territory" readonly disabled value="{{operators.territory}}">
+                            <label for="operator_code">Operator Code</label>
+                            <input type="text" name="operator_code" readonly disabled value="{{operators.operator_code}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

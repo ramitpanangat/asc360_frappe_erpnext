@@ -1,0 +1,94 @@
+{% extends "www/base_template.html" %}
+
+{% block activeIssuePolicy %}active{% endblock activeIssuePolicy %}
+
+{% block title %}Issue Policy | {{issue_policy.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/issue_policy">Issue Policy</a> > {{ issue_policy.name }}</h3>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="customer">Customer</label>
+                            <input type="text" name="customer" readonly disabled value="{{issue_policy.customer_name}}">
+                            
+                            <label for="date_of_birth">Date of Birth</label>
+                            <input type="text" name="date_of_birth" readonly disabled value="{% if issue_policy.date_of_birth %}{{issue_policy.date_of_birth.strftime('%d-%m-%Y')}}{% else %}N/A{% endif %}">
+                        </div>
+
+                        <div class="column-break">
+                            <label for="date_of_issue">Date of Issue</label>
+                            <input type="text" name="date_of_issue" readonly disabled value="{{issue_policy.date_of_issue}}">
+                            
+                            <label for="operator">Operator</label>
+                            <input type="text" name="operator" readonly disabled value="{{issue_policy.operator}}">
+                            
+                            <!-- <label for="operator_commission_percentage">Commission Percentage</label>
+                            <input type="text" name="operator_commission_percentage" readonly disabled value="{{issue_policy.operator_commission_percentage}}"> -->
+                        </div>
+                    </div>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="beginning_date">Beginning Date</label>
+                            <input type="text" name="beginning_date" readonly disabled value="{{issue_policy.start_date.strftime('%d-%m-%Y')}}">
+
+                            <label for="policy">Plan</label>
+                            <input type="text" name="policy" readonly disabled value="{{issue_policy.policy}}">
+                            
+                            <!-- <label for="quantity">Quantity</label>
+                            <input type="text" name="quantity" readonly disabled value="{{issue_policy.quantity}}"> -->
+
+                            <label for="rate">Policy Rate</label>
+                            <input type="text" name="rate" readonly disabled value="{{issue_policy.amount}}">
+
+                            <label for="supplier">Supplier</label>
+                            <input type="text" name="supplier" readonly disabled value="{{issue_policy.policy_provider}}">
+                            
+                            <!-- <label for="amount">Invoice Amount</label>
+                            <input type="text" name="amount" readonly disabled value="{{issue_policy.amount}}"> -->
+                            
+                            <!-- <label for="operator_commission_received">Operator Commission Received</label>
+                            <input type="text" name="operator_commission_received" readonly disabled value="{{issue_policy.operator_commission_received}}"> -->
+                        </div>
+
+                        <div class="column-break">
+                            <label for="end_date">End Date</label>
+                            <input type="text" name="end_date" readonly disabled value="{{issue_policy.end_date}}">
+
+                            <label for="master_policy">Policy</label>
+                            <input type="text" name="master_policy" readonly disabled value="{{issue_policy.policy_name}}">
+
+                            <label for="period_of_issuance">Period of Issuance</label>
+                            <input type="text" name="period_of_issuance" readonly disabled value="{{issue_policy.period_of_issuance}}">
+
+                            <!-- <label for="discount">Customer Discount</label>
+                            <input type="text" name="discount" readonly disabled value="{{issue_policy.discount}}">
+                            
+                            <label for="grand_total">Grand Total</label>
+                            <input type="text" name="grand_total" readonly disabled value="{{issue_policy.grand_total}}"> -->
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

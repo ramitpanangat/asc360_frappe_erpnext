@@ -1,0 +1,145 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 16:34:30.901828",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "incident_number",
+  "date_of_evacuation",
+  "evacuation_priority",
+  "name_of_caller",
+  "relation_to_claimaint",
+  "evacuation_done_by",
+  "column_break_7",
+  "policy_number",
+  "membership_id",
+  "evacuation_type",
+  "evacuation_situation",
+  "caller_contact",
+  "contacted_through",
+  "amended_from",
+  "onboard_vendor"
+ ],
+ "fields": [
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Policy Number",
+   "options": "Operator Policy Issued"
+  },
+  {
+   "fieldname": "membership_id",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_standard_filter": 1,
+   "label": "Membership ID"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_evacuation",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date of Evacuation"
+  },
+  {
+   "fieldname": "evacuation_priority",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Evacuation Priority",
+   "options": "Evacuation Priority"
+  },
+  {
+   "fieldname": "evacuation_situation",
+   "fieldtype": "Link",
+   "label": "Evacuation Situation",
+   "options": "Evacuation Situation"
+  },
+  {
+   "fieldname": "name_of_caller",
+   "fieldtype": "Data",
+   "label": "Name of Caller"
+  },
+  {
+   "fieldname": "caller_contact",
+   "fieldtype": "Data",
+   "label": "Caller Contact Number"
+  },
+  {
+   "fieldname": "relation_to_claimaint",
+   "fieldtype": "Data",
+   "label": "Relation To Claimaint"
+  },
+  {
+   "fieldname": "evacuation_done_by",
+   "fieldtype": "Select",
+   "label": "Evacuation Done By",
+   "options": "\nClient\nThird Party\nGuide"
+  },
+  {
+   "fieldname": "contacted_through",
+   "fieldtype": "Select",
+   "label": "Contacted Through",
+   "options": "\nPhone\nWhatsApp\nEmail\nApp\nWebsite"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Launch Evacuation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "incident_number",
+   "fieldtype": "Link",
+   "label": "Incident Number",
+   "options": "Incident Report"
+  },
+  {
+   "fieldname": "onboard_vendor",
+   "fieldtype": "Link",
+   "label": "Onboard Vendor",
+   "options": "Onboard Vendor"
+  },
+  {
+   "fieldname": "evacuation_type",
+   "fieldtype": "Link",
+   "label": "Evacuation Type",
+   "options": "Evacuation Type"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-06-26 01:04:30.435062",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Launch Evacuation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

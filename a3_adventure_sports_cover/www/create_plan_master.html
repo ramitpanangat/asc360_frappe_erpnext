@@ -1,0 +1,18 @@
+{% extends "www/base_template.html" %}
+
+{% block activeIssuedTicket %}active{% endblock activeIssuedTicket %}
+
+{% block title %}New Operator{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div style="border: 2px solid #D5CC5A; overflow: hidden; margin: auto; max-width: 100%;">
+    <iframe scrolling="yes" src="/policy-master" style="border: 0px none; margin-left: 350px; height: 812px; margin-top: auto; width: 1400px;">
+    </iframe>
+</div>
+
+{% endblock %}

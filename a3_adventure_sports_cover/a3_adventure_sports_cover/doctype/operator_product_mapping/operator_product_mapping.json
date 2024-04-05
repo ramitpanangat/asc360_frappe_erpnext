@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{operator} - {policy}",
+ "creation": "2022-08-10 13:20:21.191109",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator",
+  "policy",
+  "column_break_3",
+  "commission_type",
+  "commission_amount",
+  "commission_percentage",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "label": "Policy",
+   "options": "Customised Policy"
+  },
+  {
+   "fetch_from": "policy.policy_commission_type",
+   "fetch_if_empty": 1,
+   "fieldname": "commission_type",
+   "fieldtype": "Select",
+   "label": "Commission Type",
+   "options": "No Commission\nPercentage\nAmount",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.commission_type==\"Amount\";",
+   "fetch_from": "policy.commission_amount",
+   "fetch_if_empty": 1,
+   "fieldname": "commission_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Amount",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.commission_type==\"Percentage\"",
+   "fetch_from": "policy.commission_percentage",
+   "fetch_if_empty": 1,
+   "fieldname": "commission_percentage",
+   "fieldtype": "Float",
+   "label": "Commission Percentage",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Operator Product Mapping",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-17 19:26:16.245342",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Product Mapping",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

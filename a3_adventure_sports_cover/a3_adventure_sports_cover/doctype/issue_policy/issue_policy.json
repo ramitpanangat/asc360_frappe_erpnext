@@ -1,0 +1,282 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:S-{########}",
+ "creation": "2022-03-23 11:27:55.095004",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "customer_discount_type",
+  "customer_discount_percentage",
+  "customer_discount_amount",
+  "date_of_birth",
+  "column_break_2",
+  "operator",
+  "operator_commission_type",
+  "operator_commission_percentage",
+  "operator_commission_amount",
+  "amended_from",
+  "section_break_5",
+  "policy",
+  "quantity",
+  "amount",
+  "operator_commission_received",
+  "column_break_14",
+  "master_policy",
+  "rate",
+  "discount",
+  "grand_total",
+  "section_break_7",
+  "plan_details",
+  "section_break_9",
+  "beginning_date",
+  "period_of_issuance",
+  "column_break_12",
+  "end_date",
+  "supplier",
+  "section_break_30",
+  "operator_territory",
+  "territory_code",
+  "scope_of_policy",
+  "type_of_policy",
+  "operator_code",
+  "issue_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Issue Policy",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "plan_details",
+   "fieldtype": "Table",
+   "label": "Plan Details",
+   "options": "Issue Policy Plan Details"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "beginning_date",
+   "fieldtype": "Date",
+   "label": "Beginning Date"
+  },
+  {
+   "fieldname": "period_of_issuance",
+   "fieldtype": "Data",
+   "label": "Period of Issuance"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "customer.discount_type",
+   "fieldname": "customer_discount_type",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Customer Discount Type"
+  },
+  {
+   "depends_on": "eval:doc.customer_discount_type == \"Percentage\"",
+   "fetch_from": "customer.discount_percentage",
+   "fieldname": "customer_discount_percentage",
+   "fieldtype": "Float",
+   "label": "Customer Discount Percentage"
+  },
+  {
+   "depends_on": "eval:doc.customer_discount_type == \"Amount\"",
+   "fetch_from": "customer.discount_amount",
+   "fieldname": "customer_discount_amount",
+   "fieldtype": "Currency",
+   "label": "Customer Discount Amount"
+  },
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fetch_from": "operator.commisson_type",
+   "fieldname": "operator_commission_type",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Operator Commission Type"
+  },
+  {
+   "depends_on": "eval: doc.operator_commission_type == \"Percentage\"",
+   "fetch_from": "operator.commission_percentage",
+   "fieldname": "operator_commission_percentage",
+   "fieldtype": "Float",
+   "label": "Operator Commission Percentage"
+  },
+  {
+   "depends_on": "eval: doc.operator_commission_type == \"Amount\"",
+   "fetch_from": "operator.commission_amount",
+   "fieldname": "operator_commission_amount",
+   "fieldtype": "Currency",
+   "label": "Operator Commission Amount"
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "label": "Policy",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "policy.standard_rate",
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Policy Rate"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Invoice Amount"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Customer Discount"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
+  },
+  {
+   "fetch_from": "policy.master_policy",
+   "fieldname": "master_policy",
+   "fieldtype": "Link",
+   "label": "Master Policy",
+   "options": "Policy Master"
+  },
+  {
+   "fieldname": "operator_commission_received",
+   "fieldtype": "Currency",
+   "label": "Operator Commission Payable"
+  },
+  {
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "operator.territory",
+   "fieldname": "operator_territory",
+   "fieldtype": "Link",
+   "label": "Operator Territory ",
+   "options": "Territory"
+  },
+  {
+   "fetch_from": "operator_territory.state_code",
+   "fieldname": "territory_code",
+   "fieldtype": "Data",
+   "label": "Territory Code"
+  },
+  {
+   "fetch_from": "master_policy.scope_of_policy",
+   "fieldname": "scope_of_policy",
+   "fieldtype": "Data",
+   "label": "Scope of Policy"
+  },
+  {
+   "fetch_from": "master_policy.type_of_policy",
+   "fieldname": "type_of_policy",
+   "fieldtype": "Data",
+   "label": "Type of Policy"
+  },
+  {
+   "fetch_from": "operator.operator_code",
+   "fieldname": "operator_code",
+   "fieldtype": "Data",
+   "label": "Operator Code"
+  },
+  {
+   "fieldname": "issue_code",
+   "fieldtype": "Data",
+   "label": "Issue Code"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-06-09 21:52:18.737867",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Issue Policy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

@@ -1,0 +1,419 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:END-{b2b_policy}-{###}",
+ "creation": "2022-07-07 14:54:17.958752",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator",
+  "operator_email",
+  "pnr_number",
+  "column_break_header",
+  "operator_batch_code",
+  "date_of_issue",
+  "b2b_policy",
+  "provider_id_section",
+  "icici_provider_id",
+  "cb_01",
+  "hdfc_provider_id",
+  "cb_02",
+  "other_provider_id",
+  "policy_details_section",
+  "journey_start_date",
+  "policy_number",
+  "policy_name",
+  "period_of_issuance",
+  "location_from",
+  "adventure_activities_on_trip",
+  "column_break_10",
+  "journey_end_date",
+  "policy",
+  "amount",
+  "location_to",
+  "policy_provider",
+  "notification_on_updation_section",
+  "send_whatsapp_alert",
+  "column_break_23",
+  "send_sms_alert",
+  "customer_details_section",
+  "customer_name",
+  "gender",
+  "email_id",
+  "event",
+  "column_break_9",
+  "date_of_birth",
+  "nationality",
+  "phone_number",
+  "nominee_details_section",
+  "nominee_name",
+  "nominee_contact_number",
+  "column_break_18",
+  "nominee_relationship",
+  "section_break_33",
+  "documents",
+  "section_break_35",
+  "endorsed",
+  "endorsement",
+  "column_break_38",
+  "endorsement_count",
+  "original_policy",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fetch_from": "b2b_policy.operator_email",
+   "fetch_if_empty": 1,
+   "fieldname": "operator_email",
+   "fieldtype": "Data",
+   "label": "Operator Email"
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_issue",
+   "fieldtype": "Date",
+   "label": "Date of Issue",
+   "read_only": 1
+  },
+  {
+   "fieldname": "policy_details_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Details"
+  },
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Policy Number"
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "label": "Plan Name",
+   "options": "Item"
+  },
+  {
+   "default": "0",
+   "fetch_from": "b2b_policy.amount",
+   "fetch_if_empty": 1,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Premium"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "b2b_policy.period_of_issuance",
+   "fieldname": "period_of_issuance",
+   "fieldtype": "Data",
+   "label": "Period of Issuance"
+  },
+  {
+   "fieldname": "policy_provider",
+   "fieldtype": "Link",
+   "label": "Policy Provider",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "customer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fetch_from": "b2b_policy.customer_name",
+   "fetch_if_empty": 1,
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "b2b_policy.gender",
+   "fetch_if_empty": 1,
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fetch_from": "b2b_policy.email_id",
+   "fetch_if_empty": 1,
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "b2b_policy.date_of_birth",
+   "fetch_if_empty": 1,
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fetch_from": "b2b_policy.nationality",
+   "fetch_if_empty": 1,
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "fetch_from": "b2b_policy.phone_number",
+   "fetch_if_empty": 1,
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "nominee_details_section",
+   "fieldtype": "Section Break",
+   "label": "Nominee Details"
+  },
+  {
+   "fieldname": "nominee_name",
+   "fieldtype": "Data",
+   "label": "Nominee Name"
+  },
+  {
+   "fieldname": "nominee_contact_number",
+   "fieldtype": "Data",
+   "label": "Nominee Contact Number"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nominee_relationship",
+   "fieldtype": "Data",
+   "label": "Nominee Relationship"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "B2B Policy Issue",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "b2b_policy",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "B2B Policy",
+   "options": "B2B Policy Issue"
+  },
+  {
+   "fetch_from": "b2b_policy.pnr_number",
+   "fetch_if_empty": 1,
+   "fieldname": "pnr_number",
+   "fieldtype": "Data",
+   "label": "PNR Number"
+  },
+  {
+   "fetch_from": "b2b_policy.start_location",
+   "fetch_if_empty": 1,
+   "fieldname": "location_from",
+   "fieldtype": "Data",
+   "label": "Location From"
+  },
+  {
+   "fetch_from": "b2b_policy.end_location",
+   "fetch_if_empty": 1,
+   "fieldname": "location_to",
+   "fieldtype": "Data",
+   "label": "Location To"
+  },
+  {
+   "fetch_from": "b2b_policy.start_date",
+   "fetch_if_empty": 1,
+   "fieldname": "journey_start_date",
+   "fieldtype": "Date",
+   "label": "Journey Start Date"
+  },
+  {
+   "fetch_from": "b2b_policy.end_date",
+   "fetch_if_empty": 1,
+   "fieldname": "journey_end_date",
+   "fieldtype": "Date",
+   "label": "Journey End Date"
+  },
+  {
+   "fetch_from": "b2b_policy.adventure_sports_activities_on_trip",
+   "fetch_if_empty": 1,
+   "fieldname": "adventure_activities_on_trip",
+   "fieldtype": "Small Text",
+   "label": "Adventure Activities on Trip"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "B2B Document Table"
+  },
+  {
+   "fieldname": "section_break_35",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Endorsement Details"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "endorsed",
+   "fieldtype": "Data",
+   "label": "Endorsed"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "endorsement",
+   "fieldtype": "Link",
+   "label": "Endorsement",
+   "options": "B2B Endorsement"
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "endorsement_count",
+   "fieldtype": "Data",
+   "label": "Endorsement Count"
+  },
+  {
+   "fieldname": "original_policy",
+   "fieldtype": "Link",
+   "label": "Original Policy",
+   "options": "B2B Policy Issue"
+  },
+  {
+   "fetch_from": "b2b_policy.policy_name",
+   "fetch_if_empty": 1,
+   "fieldname": "policy_name",
+   "fieldtype": "Link",
+   "label": "Policy Name",
+   "options": "Customised Policy"
+  },
+  {
+   "fieldname": "operator_batch_code",
+   "fieldtype": "Data",
+   "label": "Operator Batch Code"
+  },
+  {
+   "fieldname": "notification_on_updation_section",
+   "fieldtype": "Section Break",
+   "label": "Notification On Updation"
+  },
+  {
+   "fetch_from": "b2b_policy.send_whatsapp_alert",
+   "fetch_if_empty": 1,
+   "fieldname": "send_whatsapp_alert",
+   "fieldtype": "Select",
+   "label": "Send WhatsApp Alert",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "b2b_policy.send_sms_alert",
+   "fetch_if_empty": 1,
+   "fieldname": "send_sms_alert",
+   "fieldtype": "Select",
+   "label": "Send SMS Alert",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fetch_from": "b2b_policy.event",
+   "fetch_if_empty": 1,
+   "fieldname": "event",
+   "fieldtype": "Link",
+   "label": "Event",
+   "options": "Events"
+  },
+  {
+   "fieldname": "provider_id_section",
+   "fieldtype": "Section Break",
+   "label": "Provider ID"
+  },
+  {
+   "fetch_from": "b2b_policy.icici_provider_id",
+   "fetch_if_empty": 1,
+   "fieldname": "icici_provider_id",
+   "fieldtype": "Data",
+   "label": "ICICI Provider ID"
+  },
+  {
+   "fieldname": "cb_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "b2b_policy.hdfc_provider_id",
+   "fetch_if_empty": 1,
+   "fieldname": "hdfc_provider_id",
+   "fieldtype": "Data",
+   "label": "HDFC Provider ID"
+  },
+  {
+   "fieldname": "cb_02",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "b2b_policy.other_provider_id",
+   "fetch_if_empty": 1,
+   "fieldname": "other_provider_id",
+   "fieldtype": "Data",
+   "label": "Other Provider ID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-12-19 13:10:10.778380",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "B2B Endorsement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

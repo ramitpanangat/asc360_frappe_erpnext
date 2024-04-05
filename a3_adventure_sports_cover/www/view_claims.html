@@ -1,0 +1,61 @@
+{% extends "www/base_template.html" %}
+
+{% block activeClaims %}active{% endblock activeClaims %}
+
+{% block title %}Issued Ticket | {{claim.name}}{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/claim_intimation">Claim</a> > {{ claim.name }}</h3>
+                    </div>
+                    <h3 class="section-title"><strong>Claim Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="name">Date of Intimation</label>
+                            <input type="text" name="name" readonly disabled value="{{claim.date_of_intimation}}">
+                            
+                            <label for="subject">Intimation By</label>
+                            <input type="text" name="subject" readonly disabled value="{{claim.intimation_by}}"> 
+                        </div>
+                    </div>
+                    <h3 class="section-title"><strong>Caller Details</strong></h3>
+                    <div class="card view-page">
+                        <div class="column-break">
+                            <label for="name">Name of Caller</label>
+                            <input type="text" name="name" readonly disabled value="{{claim.name_of_caller}}">
+                            
+                            <label for="subject">Relation to Claimant</label>
+                            <input type="text" name="subject" readonly disabled value="{{claim.relation_to_claimaint}}"> 
+                        </div>
+                        <div class="column-break">
+                            <label for="name">Caller Contact No.</label>
+                            <input type="text" name="name" readonly disabled value="{{claim.caller_contact_no}}">
+                            
+                            <label for="subject">Contacted By</label>
+                            <input type="text" name="subject" readonly disabled value="{{claim.contacted_by}}"> 
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

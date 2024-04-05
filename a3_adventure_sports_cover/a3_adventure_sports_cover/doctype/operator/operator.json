@@ -1,0 +1,239 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:operator_name",
+ "creation": "2022-03-29 14:16:07.069602",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_details_section",
+  "operator_name",
+  "email",
+  "website",
+  "registration_number",
+  "column_break_4",
+  "union",
+  "logo",
+  "registration_certificate",
+  "address_and_contact_section",
+  "address",
+  "column_break_11",
+  "contact",
+  "account_details_section",
+  "account_number",
+  "account_holder_name",
+  "branch",
+  "ifsc_code",
+  "column_break_18",
+  "mode_of_business",
+  "pan_number",
+  "registration_details_section",
+  "atoai_member",
+  "registered_with_ministry_of_tourism",
+  "registered_with_state_tourism",
+  "column_break_25",
+  "atoai_certificate_upload",
+  "ministry_of_tourism_certificate_upload",
+  "state_tourism_certificate_upload",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "union",
+   "fieldtype": "Link",
+   "label": "Union",
+   "options": "Union"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "operator_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Operator Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fieldname": "registration_certificate",
+   "fieldtype": "Attach",
+   "label": "Registration Certificate"
+  },
+  {
+   "fieldname": "address_and_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "account_details_section",
+   "fieldtype": "Section Break",
+   "label": "Account Details"
+  },
+  {
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "account_holder_name",
+   "fieldtype": "Data",
+   "label": "Account Holder Name"
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Data",
+   "label": "Branch"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_business",
+   "fieldtype": "Select",
+   "label": "Mode of Business",
+   "options": "Online\nOffline\nBoth"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "label": "PAN Number"
+  },
+  {
+   "fieldname": "registration_details_section",
+   "fieldtype": "Section Break",
+   "label": "Registration Details"
+  },
+  {
+   "fieldname": "atoai_member",
+   "fieldtype": "Select",
+   "label": "ATOAI Member",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "registered_with_ministry_of_tourism",
+   "fieldtype": "Select",
+   "label": "Registered with Ministry of Tourism",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "registered_with_state_tourism",
+   "fieldtype": "Select",
+   "label": "Registered with State Tourism",
+   "options": "Yes\nNo"
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "atoai_certificate_upload",
+   "fieldtype": "Attach",
+   "label": "ATOAI Certificate Upload"
+  },
+  {
+   "fieldname": "ministry_of_tourism_certificate_upload",
+   "fieldtype": "Attach",
+   "label": "Ministry of Tourism Certificate Upload"
+  },
+  {
+   "fieldname": "state_tourism_certificate_upload",
+   "fieldtype": "Attach",
+   "label": "State Tourism Certificate Upload"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Operator",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "basic_details_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Details"
+  }
+ ],
+ "image_field": "logo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-12 14:35:42.092474",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Policy Issuer"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

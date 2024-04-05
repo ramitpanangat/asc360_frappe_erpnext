@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-03-29 13:43:12.937831",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "benefits",
+  "plan_1",
+  "plan_2",
+  "plan_3",
+  "plan_4",
+  "deductible"
+ ],
+ "fields": [
+  {
+   "fieldname": "benefits",
+   "fieldtype": "Select",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Benefits",
+   "options": "\nHospitalization charges for injuries and illness\nMedical Evacuation(Air and Road)\nPersonal Accident  (Death and Disability)\nRepatriation of Remains Extension\nExtension 1:Outpatient Expenses for injuries/illness\nExtension 2: Daily Allowances in Case of Hospitalization due to injury/illness\nChecked-In Baggage Loss\nChecked-In Baggage Delay\nMissed connections\nCompassionate Visit\nTrip Cancellations\nTrip Interruption\nTrip Delay\nAccidental Death and Disappearance\nPermanent Disablement Without Death\nEmergency Medical Expenses (Domestic)\nMedical Evacuation & Repatriation Cover\nReconstructive Surgery Benefit\nPublic Liability\nTrip Cancellation (Domestic)\nSports Equipment Cover\nSearch N Rescue (Domestic)",
+   "translatable": 1
+  },
+  {
+   "fieldname": "plan_1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 1",
+   "translatable": 1
+  },
+  {
+   "fieldname": "plan_2",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 2",
+   "translatable": 1
+  },
+  {
+   "fieldname": "plan_3",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 3",
+   "translatable": 1
+  },
+  {
+   "fieldname": "plan_4",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Plan 4",
+   "translatable": 1
+  },
+  {
+   "fieldname": "deductible",
+   "fieldtype": "Data",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Deductible",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-04-26 14:53:58.729502",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Insurance Plan Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

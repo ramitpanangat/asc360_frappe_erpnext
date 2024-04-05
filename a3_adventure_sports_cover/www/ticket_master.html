@@ -1,0 +1,106 @@
+{% extends "www/base_template.html" %}
+
+{% block activeTicketMaster %}active{% endblock activeTicketMaster %}
+
+{% block title %}Ticket Master{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title">Ticket Master</h3>
+                        <a href="/create_ticket_master" class="create-button">Create Ticket Master</a>
+                    </div>
+
+                    <div class="card filter-bar">
+                        <div class="campaign-table table-responsive">
+
+                            <form action="/ticket_master" method="post">
+                                <!-- Filter By Product Name -->
+                                {% if params.name=="" or params.name==None %}
+                                    <input type="text" name="name" list="name" autocomplete="off" placeholder="Product Name">
+                                {% else %}
+                                    <input type="text" name="name" list="name" autocomplete="off" value="{{params.name}}">
+                                {% endif %}
+                                <datalist id="name">
+                                   {% for product in products %}  
+                                       <option value="{{ product.name }}">{{ product.name }}</option>
+                                   {% endfor %}
+                                </datalist>
+                               
+                                <!-- Filter By Package Type -->
+                                {% if params.package_type=="" or params.package_type==None %}
+                                    <input type="text" name="package_type" list="package_type" placeholder="Package Type" autocomplete="off">
+                                {% else %}
+                                    <input type="text" name="package_type" list="package_type" value="{{params.package_type}}" autocomplete="off">
+                                {% endif %}
+                                <datalist id="package_type">
+                                    {% for package_type in package_types %}
+                                        <option value="{{package_type}}">{{package_type}}</option>
+                                    {% endfor %}
+                                </datalist>
+
+                                <!-- Filter By Package Category -->
+                                {% if params.package_category=="" or params.package_category==None %}
+                                    <input type="text" name="package_category" list="package_category" placeholder="Package Category" autocomplete="off">
+                                {% else %}
+                                    <input type="text" name="package_category" list="package_category" value="{{params.package_category}}" autocomplete="off">
+                                {% endif %}
+                                <datalist id="package_category">
+                                    {% for package_category in package_categories %}
+                                        <option value="{{package_category}}">{{package_category}}</option>
+                                    {% endfor %}
+                                </datalist>
+       
+                               
+                               <input type="submit" value="Filter">                           
+                           </form>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="campaign-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr class="border-0">
+                                        <th class="border-0">Ticket Name</th>
+                                        <th class="border-0">Package Type</th>
+                                        <th class="border-0">Package Category</th>
+                                        <th class="border-0">Net Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if products|length > 0 %}
+                                        {% for product in products %}
+                                            <tr>
+                                                <td><a href="/view_ticket_master/{{product.name}}" class="item-view">{{product.name}}</a></td>
+                                                <td>{{product.package_type}}</td>
+                                                <td>{{product.package_category}}</td>
+                                                <td>{{product.net_total}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr><td colspan="7" class="no-data-td">No Data Found</td></tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}

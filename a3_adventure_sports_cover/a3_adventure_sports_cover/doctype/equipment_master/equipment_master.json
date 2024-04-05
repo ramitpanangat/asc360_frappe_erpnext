@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{equipment_name}",
+ "creation": "2022-03-15 15:39:32.843772",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "equipment_name",
+  "column_break_2",
+  "equipment_type",
+  "capacity_details_section",
+  "maximum_capacity",
+  "column_break_6",
+  "minimum_capacity"
+ ],
+ "fields": [
+  {
+   "fieldname": "equipment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Equipment Type",
+   "options": "Commercial\nSolo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "equipment_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Equipment Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "capacity_details_section",
+   "fieldtype": "Section Break",
+   "label": "Capacity Details"
+  },
+  {
+   "fieldname": "maximum_capacity",
+   "fieldtype": "Data",
+   "label": "Maximum Capacity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "minimum_capacity",
+   "fieldtype": "Data",
+   "label": "Minimum Capacity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-09-01 10:57:23.416088",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Equipment Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

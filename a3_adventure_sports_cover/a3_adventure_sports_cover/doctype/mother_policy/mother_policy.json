@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:policy_name",
+ "creation": "2022-03-29 16:29:13.710622",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "policy_name",
+  "policy_provider",
+  "column_break_4",
+  "plan_details_section",
+  "insurance_plan_details",
+  "policy_premium_details_section",
+  "policy_premium",
+  "section_break_10",
+  "description",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Data",
+   "label": "Policy Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "policy_provider",
+   "fieldtype": "Link",
+   "label": "Policy Provider",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "plan_details_section",
+   "fieldtype": "Section Break",
+   "label": "Plan Details"
+  },
+  {
+   "fieldname": "insurance_plan_details",
+   "fieldtype": "Table",
+   "label": "Insurance Plan Details",
+   "options": "Mother Plan Details"
+  },
+  {
+   "fieldname": "policy_premium_details_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Premium Details"
+  },
+  {
+   "fieldname": "policy_premium",
+   "fieldtype": "Table",
+   "label": "Policy Premium",
+   "options": "Mother Policy Rate"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Mother Policy",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Policy Master",
+   "link_fieldname": "parent_policy"
+  }
+ ],
+ "modified": "2022-11-05 19:56:15.155822",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Mother Policy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

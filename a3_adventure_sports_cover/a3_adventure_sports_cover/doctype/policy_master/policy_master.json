@@ -1,0 +1,225 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:policy_name",
+ "creation": "2022-03-29 13:53:15.824927",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_1",
+  "policy_name",
+  "parent_policy",
+  "policy_provider",
+  "column_break_4",
+  "scope_of_policy",
+  "type_of_policy",
+  "plan_details_section",
+  "insurance_plan_details",
+  "policy_premium_details_section",
+  "policy_premium",
+  "section_break_10",
+  "description",
+  "amended_from",
+  "section_break_13",
+  "why_asc",
+  "section_break_15",
+  "footer",
+  "section_break_17",
+  "please_note",
+  "section_break_19",
+  "claim_procedure",
+  "section_break_21",
+  "important_note",
+  "section_break_23",
+  "email_template",
+  "sms_template",
+  "whatsapp_template"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Data",
+   "label": "Policy Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "policy_provider",
+   "fieldtype": "Link",
+   "label": "Policy Provider",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parent_policy",
+   "fieldtype": "Link",
+   "label": "Parent Policy",
+   "options": "Mother Policy"
+  },
+  {
+   "fieldname": "plan_details_section",
+   "fieldtype": "Section Break",
+   "label": "Plan Details"
+  },
+  {
+   "fieldname": "insurance_plan_details",
+   "fieldtype": "Table",
+   "label": "Insurance Plan Details",
+   "options": "Insurance Plan Details"
+  },
+  {
+   "fieldname": "policy_premium_details_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Premium Details"
+  },
+  {
+   "fieldname": "policy_premium",
+   "fieldtype": "Table",
+   "label": "Policy Premium",
+   "options": "Policy Premium"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Policy Master",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "why_asc",
+   "fieldtype": "Table",
+   "label": "Why ASC",
+   "options": "Why ASC Table"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "footer",
+   "fieldtype": "Table",
+   "label": "Footer",
+   "options": "Policy Footer Table"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "please_note",
+   "fieldtype": "Table",
+   "label": "Please Note",
+   "options": "Policy Note Table"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "claim_procedure",
+   "fieldtype": "Table",
+   "label": "Claim Procedure",
+   "options": "Claim Procedure Table"
+  },
+  {
+   "fieldname": "section_break_21",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "important_note",
+   "fieldtype": "Table",
+   "label": "Important Note",
+   "options": "Important Note Table"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "email_template",
+   "fieldtype": "Link",
+   "label": "Email Template",
+   "options": "Email Template"
+  },
+  {
+   "fieldname": "sms_template",
+   "fieldtype": "Small Text",
+   "label": "SMS Template"
+  },
+  {
+   "fieldname": "whatsapp_template",
+   "fieldtype": "Small Text",
+   "label": "Whatsapp Template"
+  },
+  {
+   "fieldname": "scope_of_policy",
+   "fieldtype": "Select",
+   "label": "Scope of Policy",
+   "options": "\nDomestic\nInternational"
+  },
+  {
+   "fieldname": "type_of_policy",
+   "fieldtype": "Select",
+   "label": "Type of Policy",
+   "options": "\nShort Term\nAnnual"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Customised Policy",
+   "link_fieldname": "parent_policy"
+  }
+ ],
+ "modified": "2022-11-05 19:54:38.697664",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Policy Master",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

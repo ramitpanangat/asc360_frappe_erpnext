@@ -1,0 +1,100 @@
+{% extends "www/base_template.html" %}
+
+{% block activeDashboard %}active{% endblock activeDashboard %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block user %}{{username}}{% endblock user %}
+
+{% block proPic %}{{pro_pic}}{% endblock proPic %}
+
+{% block content %}
+<div class="dashboard-wrapper">
+	<div class="dashboard-influence">
+		<div class="container-fluid dashboard-content">
+			<!-- ============================================================== -->
+			<!-- content  -->
+			<!-- ============================================================== -->
+			<!-- ============================================================== -->
+			<!-- Operator profile  -->
+			<!-- ============================================================== -->
+<!-- 	
+									<div class="text-center">
+										<img src="assets/images/avatar-1.jpg" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+										</div> -->
+				<div class="grid-container">
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"><img src="{{pro_pic}}" alt="User Avatar" class="rounded-circle user-avatar-xxl"></label>
+							<label class="grid-item1" ></label>
+
+							<!-- <label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label> -->
+				</div>
+							
+						<div class=" grid-container card profile-details">
+							<label class="item1" for="name">{{ username }}</label>
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+					
+							<label class="grid-item1" for="dob">DOB</label>
+							<label class="grid-item2">:</label>
+							<label class="grid-item1" for="userdob">{{ birth_date }}</label>
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+						
+							<label class="grid-item1" for="email">Email</label>
+							<label class="grid-item2">:</label>
+							<label class="grid-item1" for="usermail">{{ email }}</label>
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+					
+							<label class="grid-item1" for="mob">Mobile No.</label>
+							<label class="grid-item2">:</label>
+							<label class="grid-item1" for="usermob">{{ mobile }}</label>
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+					
+							<label class="grid-item1" for="address">Address</label>
+							<label class="grid-item2">:</label>
+							<label class="grid-item1" for="useraddress">{{ address }}</label>
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+					
+							<label class="grid-item1" for="mob">Mode of Business</label>
+							<label class="grid-item2">:</label>
+							<label class="grid-item1" for="usermob">{{ mode_of_business }}</label>
+
+							<label class="grid-item1" ></label>
+							<label class="grid-item2"></label>
+							<label class="grid-item1"></label>
+					
+							<label class="grid-item1" for="territory">Territory</label>
+							<label class="grid-item2">:</label>
+							<label class="grid-item1" for="userterritory">{{ territory }}</label>
+					</div>
+{% endblock %}

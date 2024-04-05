@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-04-04 13:28:59.863483",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "operator_name",
+  "item_allocated",
+  "section_break_3",
+  "special_rate",
+  "discount",
+  "column_break_4",
+  "commission"
+ ],
+ "fields": [
+  {
+   "fieldname": "operator_name",
+   "fieldtype": "Link",
+   "label": "Operator",
+   "options": "Operator"
+  },
+  {
+   "fieldname": "item_allocated",
+   "fieldtype": "Table",
+   "label": "Items allocated",
+   "options": "Operator Allocated Item"
+  },
+  {
+   "fieldname": "special_rate",
+   "fieldtype": "Data",
+   "label": "Special Rate"
+  },
+  {
+   "fieldname": "commission",
+   "fieldtype": "Data",
+   "label": "Commission"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Data",
+   "label": "Discount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-04-04 13:51:55.535629",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Allocated Policy",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{hamrc_id}",
+ "creation": "2022-06-22 23:01:12.473318",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hamrc_id",
+  "column_break_2",
+  "activities",
+  "section_break_2",
+  "start_date",
+  "region",
+  "association_name",
+  "column_break_5",
+  "date_end",
+  "number_of_medical_units"
+ ],
+ "fields": [
+  {
+   "fieldname": "hamrc_id",
+   "fieldtype": "Data",
+   "label": "HAMRC ID"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region/Location",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "association_name",
+   "fieldtype": "Data",
+   "label": "Association Name"
+  },
+  {
+   "fieldname": "number_of_medical_units",
+   "fieldtype": "Data",
+   "label": "Number of Medical Units"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_end",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "activities",
+   "fieldtype": "Link",
+   "label": "Activity",
+   "options": "Activity Master"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-25 15:41:06.407425",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "HAMRC Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

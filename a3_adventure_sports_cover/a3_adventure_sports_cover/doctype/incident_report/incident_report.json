@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-06-24 16:45:59.652947",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "policy_number",
+  "hamrc_id",
+  "section_break_4",
+  "caller_name",
+  "caller_contact_number",
+  "column_break_7",
+  "relation_to_claimaint",
+  "contacted_through",
+  "location_coordinates_section",
+  "location",
+  "latitude",
+  "column_break_12",
+  "longitude",
+  "section_break_14",
+  "incident_details",
+  "section_break_16",
+  "condition_of_patient",
+  "column_break_18",
+  "evacuation_incharge",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "policy_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Policy Number",
+   "options": "List of Policy"
+  },
+  {
+   "description": "HAMRC ID/Event ID",
+   "fieldname": "hamrc_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "HAMRC ID",
+   "options": "HAMRC Event"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "caller_name",
+   "fieldtype": "Data",
+   "label": "Caller Name"
+  },
+  {
+   "fieldname": "caller_contact_number",
+   "fieldtype": "Data",
+   "label": "Caller Contact Number"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "relation_to_claimaint",
+   "fieldtype": "Data",
+   "label": "Relation to Claimaint"
+  },
+  {
+   "fieldname": "location_coordinates_section",
+   "fieldtype": "Section Break",
+   "label": "Location Co-ordinates"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Location",
+   "options": "Territory"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "incident_details",
+   "fieldtype": "Long Text",
+   "label": "Incident Details"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "condition_of_patient",
+   "fieldtype": "Data",
+   "label": "Condition of Patient"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "evacuation_incharge",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Evacuation In-Charge"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Incident Report",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "contacted_through",
+   "fieldtype": "Select",
+   "label": "Contacted Through",
+   "options": "Phone\nEmail\nWebsite\nApp"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "On Call Doctor",
+   "link_fieldname": "incident_number"
+  },
+  {
+   "link_doctype": "Claim Intimation",
+   "link_fieldname": "incident_report"
+  }
+ ],
+ "modified": "2022-08-24 15:54:40.886084",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Incident Report",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

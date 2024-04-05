@@ -1,0 +1,68 @@
+{% extends "www/base_template.html" %}
+
+{% block activeClaims %}active{% endblock activeClaims %}
+
+{% block title %}Payment | New Payment{% endblock title %}
+
+{% block user %}{{"username"}}{% endblock user %}
+
+{% block proPic %}{{"pro_pic"}}{% endblock proPic %}
+
+{% block content %}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-influence">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-block title-bar">
+                        <h3 class="section-title"><a href="/payments">Payments</a> > New Payment</h3>
+                    </div>
+                    <h3 class="section-title"><strong>Payment Details</strong></h3>
+                    <form action="/create_payment" method="POST">
+                        <div class="card view-page">
+                            <div class="column-break">
+                                <label for="name">Mode of Payment</label>
+                                <input type="text" name="mode_of_payment" list="mode_of_payment" autocomplete="off">
+                                <datalist id="mode_of_payment">
+                                    {% for mode in mode_of_payment %}
+                                    <option value="{{mode.name}}">{{mode.name}}</option>
+                                    {% endfor %}
+                                </datalist>
+                                
+                                <label for="reference_no">Reference No</label>
+                                <input type="text" name="reference_no" autocomplete="off"> 
+                                
+                                <label for="amount_paid">Amount Paid</label>
+                                <input type="text" name="amount_paid" autocomplete="off"> 
+                                <input class="submit-btn" type="submit" value="Submit">
+                            </div>
+                            <div class="column-break">
+                                <label for="name">Account</label>
+                                <input type="text" name="account" list="accounts" autocomplete="off">
+                                <datalist id="accounts">
+                                    {% for account in accounts %}
+                                    <option value="{{account.name}}">{{account.name}}</option>
+                                    {% endfor %}
+                                </datalist>
+
+                                <label for="reference_date">Reference Date</label>
+                                <input type="date" name="reference_date" autocomplete="off"> 
+
+                            </div>
+                        </div>
+                    </form>
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}

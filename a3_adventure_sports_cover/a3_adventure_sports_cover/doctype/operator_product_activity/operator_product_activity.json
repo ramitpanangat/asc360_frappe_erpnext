@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-03-15 16:16:28.032425",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "activity_name",
+  "activity_category",
+  "activity_price",
+  "activity_tax",
+  "insurance_policy",
+  "insurance_policy_price"
+ ],
+ "fields": [
+  {
+   "fetch_from": "activity_name.category",
+   "fieldname": "activity_category",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Activity Category"
+  },
+  {
+   "fetch_from": "activity_name.activity_price",
+   "fieldname": "activity_price",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Activity Price"
+  },
+  {
+   "fetch_from": "activity_name.activity_tax",
+   "fieldname": "activity_tax",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Activity Tax"
+  },
+  {
+   "fieldname": "insurance_policy_price",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Insurance Policy Price"
+  },
+  {
+   "fieldname": "activity_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Activity Name",
+   "options": "Operator Activity"
+  },
+  {
+   "fieldname": "insurance_policy",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Insurance Policy",
+   "options": "Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-05-20 14:42:08.504585",
+ "modified_by": "Administrator",
+ "module": "A3 Adventure Sports Cover",
+ "name": "Operator Product Activity",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
